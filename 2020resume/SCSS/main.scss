@@ -1,9 +1,11 @@
 .clearfix::before,
 .clearfix::after {
     content: '';
-    display: inline-block;
+    display: block;
     height: 0;
     visibility: hidden;
+    line-height: 0;
+    overflow: hidden;
 }
 
 img {
@@ -13,10 +15,25 @@ img {
 a {
     text-decoration: none;
     color: inherit;
+    -webkit-tap-highlight-color: transparent; //解決手機端頁面的鼠標點擊出現藍色背景
 }
 
 .tAlignRight {
     text-align: right;
+}
+
+.lshow {
+    @media screen and (max-width:768px) {
+        display: none;
+    }
+}
+
+.mshow {
+    display: none;
+
+    @media screen and (max-width:768px) {
+        display: block;
+    }
 }
 
 body,
@@ -32,6 +49,10 @@ html {
     max-width: 1440px;
     margin: auto;
     display: flex;
+
+    @media screen and (max-width:768px) {
+        flex-wrap: wrap;
+    }
 }
 
 .fl {
@@ -44,13 +65,12 @@ html {
 
 
 .areaA {
-    float: left;
     width: 42%;
     background-image: url(../../images/bg.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     padding-top: 120px;
-    padding: 100px 8%;
+    padding: 100px 7%;
     box-sizing: border-box;
 
     .pic {
@@ -88,14 +108,45 @@ html {
             }
         }
     }
+
+    .intoText {
+        color: #ffffff;
+
+        h1 {
+            text-align: center;
+            font-size: 32px;
+            font-weight: 500;
+
+            span {
+                font-size: 20px;
+                margin-left: 10px;
+            }
+        }
+
+        p {
+            font-size: 15px;
+            line-height: 1.5;
+        }
+    }
+
+    @media screen and (max-width:768px) {
+        width: 100%;
+        padding: 40px 7%;
+        margin-bottom: 30px;
+
+        .pic {
+            max-width: 140px;
+            margin: auto;
+        }
+    }
 }
 
 .areaB {
-    float: right;
     width: 58%;
     padding-left: 8.33%;
     padding-right: 8.33%;
     position: relative;
+    box-sizing: border-box;
 
     h1 {
         font-size: 90px;
@@ -107,6 +158,15 @@ html {
         span {
             font-size: 36px;
             margin-left: 44px;
+        }
+
+        @media screen and (max-width:1200px) {
+            font-size: 56px;
+
+            span {
+                font-size: 24px;
+                margin-left: 14px;
+            }
         }
     }
 
@@ -146,6 +206,9 @@ html {
             dt {
                 font-weight: 700;
                 margin-bottom: 0;
+                padding-left: 60px;
+                position: relative;
+                margin: 40px 0 20px 0;
 
                 span {
                     display: inline-block;
@@ -158,6 +221,9 @@ html {
                     line-height: 45px;
                     text-align: center;
                     margin-right: 12px;
+                    position: absolute;
+                    left: 0;
+                    top: -14px;
                 }
             }
 
@@ -300,6 +366,7 @@ html {
 
         .pItemRow {
             display: flex;
+            flex-wrap: wrap;
 
             .sPItem {
                 width: 33.3%;
@@ -309,6 +376,7 @@ html {
                 border-radius: 12px;
                 overflow: hidden;
                 transition: all .4s;
+                box-sizing: border-box;
 
                 &:hover {
                     background-color: #efefef;
@@ -330,6 +398,74 @@ html {
             }
         }
     }
+
+    @media screen and (max-width:768px) {
+        width: 100%;
+
+        .intoItem {
+
+            h2 {
+                text-align: center;
+                padding: 10px 12px;
+            }
+
+            dl {
+                padding: 0 20px;
+
+                &::before {
+                    left: 43px;
+                }
+
+                dt {
+                    margin: 30px 0 10px 0;
+                }
+            }
+
+            .pItem {
+                flex-wrap: wrap;
+
+                .pic {
+                    width: 100%;
+                    order: 1;
+                }
+
+                .text {
+                    width: 100%;
+                    order: 2;
+                    text-align: center;
+                }
+            }
+
+            .pItemRow {
+                .sPItem {
+                    width: 50%;
+                }
+            }
+
+        }
+    }
+
+    @media screen and (max-width:480px) {
+        .intoItem {
+            .pItem {
+                margin-bottom: 0;
+
+                .pic {
+                    img {
+                        width: 84%;
+
+                    }
+                }
+            }
+
+            .pItemRow {
+                .sPItem {
+                    width: 100%;
+                }
+            }
+        }
+    }
+
 }
 
 .ths {
@@ -353,5 +489,9 @@ html {
         text-align: center;
         padding: 12px;
         font-size: 15px;
+    }
+
+    @media screen and (max-width:768px) {
+        position: relative;
     }
 }
