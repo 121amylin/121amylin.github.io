@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .element_box {
+        overflow: hidden;
+        transition: all 0.4s;
+      }
+      .element {
+        display: inline-block;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element_box">
+      <p class="element">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
+        voluptate omnis modi vero expedita praesentium iste inventore quibusdam
+        similique delectus quisquam dolore suscipit et quidem, in magnam fugiat?
+        Culpa, doloribus? Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Quae error quidem architecto harum dolorum vel debitis minus
+        animi, repudiandae corrupti fugiat expedita? Excepturi non consectetur
+        vitae atque ea qui corrupti?
+      </p>
+    </div>
+    <button class="element_togglebun" onclick="showAllfun()">展開</button>
+    <script>
+      let element = document.querySelector(".element");
+      let element_box = document.querySelector(".element_box");
+      let element_togglebun = document.querySelector(".element_togglebun");
+
+      let allText = element.textContent;
+      let newText = allText.substr(0, 300) + "...";
+      element.textContent = newText;
+
+      let isAll = false;
+      let sHeight = element.clientHeight;
+      let lHeight = "";
+      element_box.style.heigth = sHeight + "px";
+      console.log(sHeight);
+
+      function showAllfun() {
+        if (!lHeight) {
+          element.textContent = allText;
+          lHeight = element.clientHeight;
+          element_box.style.height = lHeight + "px";
+          element_togglebun.textContent = "收合";
+          isAll = false;
+        } else {
+          showAll();
+        }
+      }
+
+      function showAll() {
+        if (lHeight && isAll) {
+          element_box.style.height = lHeight + "px";
+          element.textContent = allText;
+          element_togglebun.textContent = "收合";
+          // console.log(lHeight);
+          isAll = false;
+          console.log(element_box.style.heigth);
+        } else {
+          element.textContent = newText;
+          isAll = true;
+          element_togglebun.textContent = "展開";
+          element_box.style.height = sHeight + "px";
+          console.log(element_box.style.heigth);
+        }
+      }
+
+      showAllfun()
+    </script>
+  </body>
+</html>

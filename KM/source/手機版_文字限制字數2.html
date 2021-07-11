@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .element_box {
+        overflow: hidden;
+        transition: all 0.4s;
+      }
+      .element {
+        display: inline-block;
+      }
+      .element-all {
+        position: absolute;
+        opacity: 0;
+        visibility: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="element_box">
+      <p class="element">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum
+        voluptate omnis modi vero expedita praesentium iste inventore quibusdam
+        similique delectus quisquam dolore suscipit et quidem, in magnam fugiat?
+        Culpa, doloribus? Lorem ipsum, dolor sit amet consectetur adipisicing
+        elit. Quae error quidem architecto harum dolorum vel debitis minus
+        animi, repudiandae corrupti fugiat expedita? Excepturi non consectetur
+        vitae atque ea qui corrupti?
+      </p>
+    </div>
+    <button class="element_togglebun" onclick="showAll()">展開</button>
+    <p class="element-all">
+      Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum voluptate
+      omnis modi vero expedita praesentium iste inventore quibusdam similique
+      delectus quisquam dolore suscipit et quidem, in magnam fugiat? Culpa,
+      doloribus? Lorem ipsum, dolor sit amet consectetur adipisicing elit. Quae
+      error quidem architecto harum dolorum vel debitis minus animi, repudiandae
+      corrupti fugiat expedita? Excepturi non consectetur vitae atque ea qui
+      corrupti?
+    </p>
+    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugit illo hic soluta repellendus itaque eveniet explicabo quasi reiciendis consequuntur, et dolor nemo minima veniam ullam? Inventore officiis veritatis beatae aliquid.</p>
+    <script>
+      let element = document.querySelector(".element");
+      let element_l = document.querySelector(".element-all");
+      let element_box = document.querySelector(".element_box");
+      let element_togglebun = document.querySelector(".element_togglebun");
+
+      let allText = element.textContent;
+      let newText = allText.substr(0, 300) + "...";
+      element.textContent = newText;
+
+      let isAll = false;
+      let sHeight = element.clientHeight;
+      let lHeight = element_l.clientHeight;
+      element_box.style.heigth = sHeight + "px";
+      console.log(sHeight);
+      console.log(lHeight);
+     
+      function showAll() {
+        if (isAll) {
+          element.textContent = allText;
+          element_box.style.height = lHeight + "px";
+          element_togglebun.textContent = "收合";
+          isAll=false
+        } else {
+          element.textContent = newText;
+          element_box.style.height = sHeight + "px";
+          element_togglebun.textContent = "展開";
+          isAll = true;
+        }
+      }
+
+      showAll() 
+    </script>
+  </body>
+</html>
