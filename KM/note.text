@@ -1,0 +1,30 @@
+<li class="alert_box">
+  <p class="alert_tit">123</p>
+  <div class="alert_content_box">
+    <div class="alert_content">
+      <div class="close">X</div>
+    8888
+
+    </div>
+  </div>
+</li>
+
+==========================================================================================================
+
+<li>
+  <a
+    target="_blank"
+    href="https://github.com/121amylin/GW_OnePageWebsite_Vue_dome"
+    >兆威一頁式網站改寫</a
+  >
+</li>
+
+==========================================================================================================
+
+<li>
+  <p>jQuery</p>
+  <ul class="in_ul">
+    <li><a target="_blank" href="https://dimsemenov.com/plugins/magnific-popup/">magnific</a></li>
+    <li><a target="_blank" href="https://nicescroll.areaaperta.com/demo/">Nicescroll_自定義卷軸樣式</a></li>
+  </ul>
+</li>

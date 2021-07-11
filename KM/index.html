@@ -92,9 +92,21 @@
               <ul class="in_ul">
                 <li>
                   <a href="./source/手機版_文字限制字數.html">手機版_文字限制字數1</a>
+                </li>
+
+                <li>
                   <a href="./source//手機版_文字限制字數2.html">手機版_文字限制字數2</a>
-                  差限制寬度   if (screen.width == 1440){ xxx }<br>
-                  JQ用法 $(el).text().substr(0,100)  、  $(el).text().substr(0,100)+"..."
+                </li>
+
+                <li class="alert_box">
+                  <p class="alert_tit">寬度判斷</p>
+                  <div class="alert_content_box">
+                    <div class="alert_content">
+                      <div class="close">X</div>
+                        【JS用法】 if (screen.width == 1440){ xxx }<br>
+                        【JQ用法】 $(el).text().substr(0,100)  、  $(el).text().substr(0,100)+"..."
+                    </div>
+                  </div>
                 </li>
               </ul>
             </li>
@@ -114,25 +126,341 @@
               <p>SCSS effect</p>
               <ul class="in_ul">
                 <li class="alert_box">
-                  <p class="alert_tit">123</p>
+                  <p class="alert_tit">GTMC ICM</p>
                   <div class="alert_content_box">
                     <div class="alert_content">
                       <div class="close">X</div>
-                    12334546
+                      <p>RWD</p>
+                      <code>
+                        @mixin rwd($size) {
+                            @media (max-width : $size) {
+                                @content;
+                            }
+                        }
+                        @mixin min-rwd($size) {
+                            @media (min-width : $size) {
+                                @content;
+                            }
+                        }
+                        @mixin portrait_view($size){
+                            @media (max-width: $size ) and (orientation: portrait ){
+                                @content;
+                            }
+                        }
+                        @mixin landscape_view($size){
+                            @media (max-width: $size ) and (orientation: landscape){
+                                @content;
+                            }
+                        }
+                        </code>
+                        <p>layout</p>
+                        <code>
+                          // clearfix
+                          @mixin clearfix {
+                            &::after {
+                              content: "";
+                              display: table;
+                              clear: both;
+                            }
+                          }
+                          // center(flex)
+                          @mixin flex-center {
+                            display: flex;
+                            justify-content: center;
+                            align-items: center;
+                          }
+                          // float none
+                          @mixin no-float {
+                            float: none;
+                            width: 100%;
+                          }
+                          //icon png(ie8) svg
+                          @mixin svg-icon($icon, $widit, $height) {
+                            display: inline-block;
+                            background-image: url("../images/#{$icon}.png");
+                            background-image: none, url("../images/#{$icon}.svg");
+                            width: $width;
+                            height: $height;
+                          }
+                        </code>
+                        <p>function</p>
+                        <code>
+                          @function set-text-color($background) {
+                          @if (lightness($background) > 50) {
+                            @return #000; // Lighter backgorund, return dark color
+                          }
+                          @else {
+                            @return #fff; // Darker background, return light color
+                          }
+                        }
+                        // to rem
+                        $base-font-size: 16px;
+                        @function toRem($px) {
+                          @return ($px / $base-font-size) * 1rem;
+                        }
+                        // px and rem
+                        // @include font-size(14px)
+                        @function calculateRem($size) {
+                          $remSize: $size / 16px;
+                          @return $remSize * 1rem;
+                        }
+                        @mixin font-size($size) {
+                          font-size: $size;
+                          font-size: calculateRem($size);
+                        }
+                        // transitions
+                        // @include transition(color .3s ease);
+                        @mixin transition($args...) {
+                          transition: $args;
+                        }
+                        </code>
+                        <p>清除浮動</p>
+                        <code>
+                          %clearfix {
+                            content: "";
+                            visibility: hidden;
+                            display: block;
+                            font-size: 0;
+                            content: " ";
+                            clear: both;
+                            height: 0;
+                        }
+                        </code>
+                    </div>
+                  </div>
+                </li>
+                <li class="alert_box">
+                  <p class="alert_tit">@mixin 字級 </p>
+                  <div class="alert_content_box">
+                    <div class="alert_content">
+                      <div class="close">X</div>
+                      <p>@mixin</p>
+                      <code>
+                      @mixin rwd-custom($size) {
+                        @media (max-width : $size) {
+                            @content;
+                          }
+                      }
+                      @mixin font-size($size) {
+                        font-size: $size;
+                        @include rwd(m1440) {
+                          font-size: ceil($size*.9);
+                        }
+                        @include rwd(m991) {
+                          font-size: ceil($size*.8);
+                        }
+                        @include rwd(m480) {
+                          font-size: ceil($size*.7);
+                        }
+                        @include rwd(m320) {
+                          font-size: ceil($size*.6);
+                          }
+                        }
+                      </code>
+                      <p>引用範例</p>
+                      <code>
+                        .xxx {
+                          @include font-size(32px)
+                        }
+                      </code>
+                    </div>
+                  </div>
+                </li>
+                <li class="alert_box">
+                  <p class="alert_tit">常用@extend</p>
+                  <div class="alert_content_box">
+                    <div class="alert_content">
+                      <div class="close">X</div>
+                      <p>% 指專門被繼承的樣式</p>
+                      <code>
+                        %pofuil {
+                          position: absolute;
+                          top: 0;
+                          bottom: 0;
+                          left: 0;
+                          right: 0;
+                        }
+                        .aaa {
+                          @extend %pofuil
+                        }
+                      </code>
+                      <p>相對定位滿版父層</p>
+                      <code>
+                        %Position-Full-Parents {
+                          position: absolute;
+                          top: 0;
+                          bottom: 0;
+                          left: 0;
+                          right: 0;
+                        }
+                      </code>
+                      <p>動畫時間</p>
+                      <code>
+                        %Animate-Time {
+                          transition: all 0.5s
+                        }
+                      </code>
+                      <p>定位垂直水平居中對齊</p>
+                      <code>
+                        %position-Center {
+                          position: relative;
+                          transform: translate(-50%, -50%);
+                          top: 50%;
+                          left: 50%;
+                        }
+                      </code>
+                      <p>背景圖滿版置中</p>
+                      <code>
+                        %bg-Cover {
+                          background-size: cover;
+                          background-repeat: no-repeat;
+                          background-position: center;
+                        }
+                      </code>
 
                     </div>
                   </div>
                 </li>
-                 <li class="alert_box">
-                  <p class="alert_tit">123</p>
+
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://clubmate.fi/scss-font-face-mixin/"
+                    >SCSS @font-face mixin</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://sass-lang.com/documentation/syntax/special-functions"
+                    >url()</a
+                  >
+                </li>
+                <li>
+                  <a
+                    target="_blank"
+                    href="https://zoneless.blog/2016/07/23/sass-tutorial-9/"
+                    >數學函式</a
+                  >
+                </li>
+                <li class="alert_box">
+                  <p class="alert_tit">內件function</p>
                   <div class="alert_content_box">
                     <div class="alert_content">
                       <div class="close">X</div>
-                    8888
+                      <a target="_blank" href="https://sass-lang.com/documentation/modules/color">官網</a>
+                      <a target="_blank" href="https://www.sasscss.com/documentation/modules/color">中文網</a>
+                      <p>Darken & Lighten 明亮度</p>
+                      <ol>
+                        <li>lighten($color, $amount)</li>
+                        <li>darken($color, $amount)</li>
+                        <li>background-color: darken($color, 10%);</li>
+                      </ol>
+                      <p>Saturate & Desaturate 飽和度</p>
+                      <ol>
+                        <li>saturate($color, $amount)</li>
+                        <li>desaturate($color, $amount)</li>
+                      </ol>
+                      <p>@each</p>
+                      <code>
+                        $sizes: 40px, 50px, 80px;
+
+                        @each $size in $sizes {
+                          .icon-#{$size} {
+                            font-size: $size;
+                            height: $size;
+                            width: $size;
+                          }
+                        }
+                      </code>
+                      <p>Maps</p>
+                      <code>
+                        $icons: ("eye": "\f112", "start": "\f12e", "stop": "\f12f");
+
+                        @each $name, $glyph in $icons {
+                          .icon-#{$name}:before {
+                            display: inline-block;
+                            font-family: "Icon Font";
+                            content: $glyph;
+                          }
+                        }
+
+                      </code>
 
                     </div>
                   </div>
                 </li>
+
+                <li class="alert_box">
+                  <p class="alert_tit">@mixin (截取BS3)</p>
+                  <div class="alert_content_box">
+                    <div class="alert_content">
+                      <div class="close">X</div>
+                      <p>居中對齊塊級元素</p>
+                      <code>
+                        @mixin center-block() {
+                          display: block;
+                          margin-right: auto;
+                          margin-left: auto;
+                        }
+                      </code>
+                      <p>清除浮動</p>
+                      <a target="_blank" href="https://medium.com/@kansetsu7/%E5%88%A9%E7%94%A8clearfix%E8%A7%A3%E6%B1%BAbootstrap-grid-system%E8%B7%91%E7%89%88%E5%95%8F%E9%A1%8C-%E4%BB%A5%E5%8F%8A%E5%85%B6%E8%83%8C%E5%BE%8C%E5%8E%9F%E7%90%86-58f6f461e4ca">用 clearfix 解決 Bootstrap grid system 跑版問題，以及其背後原理</a>
+                      <code>
+                        @mixin clearfix() {
+                          &:before,
+                          &:after {
+                            display: table; // 2
+                            content: " "; // 1
+                          }
+                          &:after {
+                            clear: both;
+                          }
+                        }
+                      </code>
+                      <p>從左到右的水平漸變</p>
+                      <code>@mixin gradient-horizontal($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+                        background-image: -webkit-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Safari 5.1-6, Chrome 10+
+                        background-image: -o-linear-gradient(left, $start-color $start-percent, $end-color $end-percent); // Opera 12
+                        background-image: linear-gradient(to right, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down
+                        background-repeat: repeat-x;
+                      }</code>
+                      <p>從上到下垂直漸變</p>
+                      <code>@mixin gradient-vertical($start-color: #555, $end-color: #333, $start-percent: 0%, $end-percent: 100%) {
+                        background-image: -webkit-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Safari 5.1-6, Chrome 10+
+                        background-image: -o-linear-gradient(top, $start-color $start-percent, $end-color $end-percent);  // Opera 12
+                        background-image: linear-gradient(to bottom, $start-color $start-percent, $end-color $end-percent); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down
+                        background-repeat: repeat-x;
+                      }</code>
+                      <p>45deg梯度方向漸變</p>
+                      <code>@mixin gradient-directional($start-color: #555, $end-color: #333, $deg: 45deg) {
+                        background-image: -webkit-linear-gradient($deg, $start-color, $end-color); // Safari 5.1-6, Chrome 10+
+                        background-image: -o-linear-gradient($deg, $start-color, $end-color); // Opera 12
+                        background-image: linear-gradient($deg, $start-color, $end-color); // Standard, IE10, Firefox 16+, Opera 12.10+, Safari 7+, Chrome 26+
+                        background-repeat: repeat-x;
+                      }</code>
+                      <p>三種顏色水平漸變</p>
+                      <code>@mixin gradient-horizontal-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
+                        background-image: -webkit-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
+                        background-image: -o-linear-gradient(left, $start-color, $mid-color $color-stop, $end-color);
+                        background-image: linear-gradient(to right, $start-color, $mid-color $color-stop, $end-color);
+                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=1); // IE9 and down, gets no color-stop at all for proper fallback
+                        background-repeat: no-repeat;
+                      }</code>
+                      <p>三種顏色垂直漸變</p>
+                      <code>@mixin gradient-vertical-three-colors($start-color: #00b3ee, $mid-color: #7a43b6, $color-stop: 50%, $end-color: #c3325f) {
+                        background-image: -webkit-linear-gradient($start-color, $mid-color $color-stop, $end-color);
+                        background-image: -o-linear-gradient($start-color, $mid-color $color-stop, $end-color);
+                        background-image: linear-gradient($start-color, $mid-color $color-stop, $end-color);
+                        filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#{ie-hex-str($start-color)}', endColorstr='#{ie-hex-str($end-color)}', GradientType=0); // IE9 and down, gets no color-stop at all for proper fallback
+                        background-repeat: no-repeat;
+                      }</code>
+                    </div>
+                  </div>
+                </li>
+
               </ul>
             </li>
             </li>
@@ -182,8 +510,6 @@
               <ul class="in_ul">
                 <li><a target="_blank" href="https://dimsemenov.com/plugins/magnific-popup/">magnific</a></li>
                 <li><a target="_blank" href="https://nicescroll.areaaperta.com/demo/">Nicescroll_自定義卷軸樣式</a></li>
-
-                 
               </ul>
             </li>
             <li>

@@ -86,6 +86,15 @@ a {
   position: absolute;
 }
 
+.section_box li .alert_box p::before {
+  width: 6px;
+  height: 6px;
+  left: 12px;
+  top: 21px;
+  border: 2px solid #ccc;
+  background-color: transparent;
+}
+
 .section_box li a {
   display: block;
   padding: 14px 0 14px 30px;
@@ -131,12 +140,22 @@ a {
   background-color: #ccc;
 }
 
+.section_box .in_ul .alert_box {
+  padding-left: 16px;
+}
+
 body {
   position: relative;
 }
 
-.alert_box .alert_tit {
+.alert_box {
   cursor: pointer;
+  -webkit-transition: background .3s;
+  transition: background .3s;
+}
+
+.alert_box:hover {
+  background-color: #f8f8f8;
 }
 
 .alert_box .alert_content_box {
@@ -170,6 +189,11 @@ body {
   background-color: #fff;
   padding: 30px 60px;
   border-radius: 4px;
+  max-height: 90vh;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
 }
 
 .alert_box .alert_content_box .alert_content .close {
@@ -178,4 +202,13 @@ body {
   position: absolute;
   right: -30px;
   top: 0;
+}
+
+ol {
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+
+ol li {
+  padding: 6px 0;
 }

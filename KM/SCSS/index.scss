@@ -70,6 +70,16 @@ a {
         position: absolute;
       }
     }
+    .alert_box {
+      p::before {
+        width: 6px;
+        height: 6px;
+        left: 12px;
+        top: 21px;
+        border: 2px solid #ccc;
+        background-color: transparent;
+      }
+    }
     a {
       display: block;
       padding: 14px 0 14px 30px;
@@ -107,14 +117,19 @@ a {
         background-color: #ccc;
       }
     }
+    .alert_box {
+      padding-left: 16px;
+    }
   }
 }
 body {
   position: relative;
 }
 .alert_box {
-  .alert_tit {
-    cursor: pointer;
+  cursor: pointer;
+  transition: background .3s;
+  &:hover{
+    background-color: #f8f8f8;
   }
   .alert_content_box {
     transition: all 0.2s;
@@ -137,18 +152,28 @@ body {
       position: absolute;
       transform: translate(-50%, -50%);
       left: 50%;
-
       z-index: 2;
       background-color: #fff;
-      padding:  30px 60px;
+      padding: 30px 60px;
       border-radius: 4px;
+      max-height: 90vh;
+      overflow-y: scroll;
+      overflow-x: hidden;
+      box-sizing: border-box;
       .close {
         cursor: pointer;
         color: #fff;
         position: absolute;
         right: -30px;
-    top: 0;
+        top: 0;
       }
     }
+  }
+}
+ol{
+  padding-left: 20px;
+  margin-bottom: 16px;
+  li{
+    padding: 6px 0;
   }
 }
