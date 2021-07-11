@@ -140,13 +140,14 @@ body {
 
       z-index: 2;
       background-color: #fff;
-      padding: 0 60px 30px 60px;
+      padding:  30px 60px;
       border-radius: 4px;
       .close {
         cursor: pointer;
         color: #fff;
-        position: relative;
-        transform: translateX(200%);
+        position: absolute;
+        right: -30px;
+    top: 0;
       }
     }
   }
