@@ -5,6 +5,11 @@
 
 body {
   font-family: Microsoft JhengHei;
+  width: 100vw;
+}
+
+body.fixed {
+  position: fixed;
 }
 
 .wrap {
@@ -32,7 +37,8 @@ ul {
   list-style: none;
 }
 
-li, a {
+li,
+a {
   line-height: 1.5;
 }
 
@@ -123,4 +129,53 @@ li, a {
   height: 2px;
   border-radius: 50%;
   background-color: #ccc;
+}
+
+body {
+  position: relative;
+}
+
+.alert_box .alert_tit {
+  cursor: pointer;
+}
+
+.alert_box .alert_content_box {
+  -webkit-transition: all 0.2s;
+  transition: all 0.2s;
+  position: absolute;
+  width: 100vw;
+  background-color: rgba(0, 0, 0, 0.8);
+  -webkit-transform: translateX(-50%);
+          transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  z-index: 1;
+}
+
+.alert_box .alert_content_box.hide {
+  display: none;
+}
+
+.alert_box .alert_content_box.show {
+  display: block;
+}
+
+.alert_box .alert_content_box .alert_content {
+  position: absolute;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  left: 50%;
+  z-index: 2;
+  background-color: #fff;
+  padding: 0 60px 30px 60px;
+  border-radius: 4px;
+}
+
+.alert_box .alert_content_box .alert_content .close {
+  cursor: pointer;
+  color: #fff;
+  position: relative;
+  -webkit-transform: translateX(200%);
+          transform: translateX(200%);
 }
