@@ -1,0 +1,48 @@
+<html>
+  <head>
+    <script src="//code.jquery.com/jquery-1.11.2.min.js"></script>
+  </head>
+  <body>
+    <!-- https://youtu.be/nklPRikHX6c -->
+    <div class="video_a" style="width: 560px; height: 315px">
+      <a href="https://www.youtube.com/watch?v=nklPRikHX6c" class="youtube"></a>
+    </div>
+    <br />
+    <div class="video_a" style="width: 560px; height: 315px">
+      <a href="https://www.youtube.com/watch?v=1UHCT_jjkSc" class="youtube"></a>
+    </div>
+    <br />
+    <div class="video_a" style="width: 560px; height: 315px">
+      <a href="https://www.youtube.com/watch?v=a02ttbs3SDA" class="youtube"></a>
+    </div>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.0.0/jquery.js' integrity='sha512-qSJBjm/8XEvmahiwqBNgh25RRmiu6X9HPq37IRBS/x6n2AgueHH21ZDLHoa+R26RRplK7N6JzM0a7ZtEvGl+xA==' crossorigin='anonymous'></script>
+    <script>
+      $(".video_a").on("click", function () {
+        let str = $(this).find("a").attr("href");
+        console.log(str)
+        let idArr = str.split("https://www.youtube.com/watch?v=");
+        $(this)
+          .html(
+            '<iframe width="560" height="315" src="//www.youtube.com/embed/' +
+              idArr[1] +
+              '?autoplay=1?autoplay=1" frameborder="0" allowfullscreen></iframe>'
+          )
+          .css("background", "none");
+      });
+      function getYoutubeID(url) {
+        var id = url.match("[\\?&]v=([^&#]*)");
+        id = id[1];
+        return id;
+      }
+      $("a.youtube").each(function () {
+        var id = getYoutubeID(this.href);
+        this.id = id;
+        var thumb_url =
+          "http://img.youtube.com/vi/" + id + "/maxresdefault.jpg";
+        $('<img width="100%" src="' + thumb_url + '" />').appendTo(
+          $(this.parentNode)
+        );
+      });
+    </script>
+  </body>
+</html>

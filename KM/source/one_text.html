@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bs {
+        color: #999;
+      }
+      span{
+        display: inline-block;
+        margin: 0 8px;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>1234</h1>
+    <hr />
+    <p>【javascript效果】</p>
+    <h1 class="str">1234</h1>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+      integrity="sha512-oL84kLQMEPIS350nZEpvFH1whU0HHGNUDq/X3WBdDAvKP7jn06gHTsCsymsoPYKF/duN8ZxzzvQgOaaZSgcYtQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 【JQ版】
+      let textArr=$('.str').text().split('')
+      let max=textArr.length
+      let newStr=''
+      for(i=0;i<max;i++){
+        newStr+="<span>"+textArr[i]+"</span>"
+      }
+      $('.str').html(newStr)
+
+      // 【JS版】
+      // let str = document.querySelector(".str").textContent;
+      // let textArr = str.split("");
+      // let max = textArr.length;
+      // let newStr = "";
+      // for (i = 0; i < max; i++) {
+      //   newStr += "<span>" + textArr[i] + "</span>";
+      // }
+      // document.querySelector(".str").innerHTML = newStr;
+    </script>
+  </body>
+</html>

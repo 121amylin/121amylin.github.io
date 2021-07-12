@@ -162,10 +162,11 @@ body {
       box-sizing: border-box;
       .close {
         cursor: pointer;
-        color: #fff;
+        color: rgb(0, 0, 0);
         position: absolute;
-        right: -30px;
-        top: 0;
+        right: 10px;
+        top: 10px;
+        z-index: 2;
       }
     }
   }

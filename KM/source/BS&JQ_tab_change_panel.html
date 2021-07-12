@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+  <script
+    src="https://code.jquery.com/jquery-3.6.0.js"
+    integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk="
+    crossorigin="anonymous"></script>
+  <!-- Latest compiled and minified JavaScript -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <style>
+    .wrap{
+      max-width: 90%;
+      margin: auto;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+
+    <ul class="nav nav-tabs">
+      <li class="active">
+        <a data-toggle="tab" href="#home">第 1 部分</a>
+      </li>
+      <li><a data-toggle="tab" href="#menu1">第 2 部分</a></li>
+    </ul>
+
+
+    <div class="panel-group" id="accordion">
+      <div class="panel panel-default">
+          <a data-toggle="collapse" data-parent="#accordion"  href="#home_m">第 1 部分 </a>
+          <div id="home_m" class="panel-collapse collapse in">
+              只要用心为用户挖掘想要的功能，这些不谋而合的想法就会不断出现1
+          </div>
+      </div>
+
+      <div class="panel panel-default">
+          <a data-toggle="collapse" data-parent="#accordion" href="#menu1_m">第 2 部分 </a>
+          <div id="menu1_m" class="panel-collapse collapse">
+          只要用心为用户挖掘想要的功能，这些不谋而合的想法就会不断出现2
+          </div>
+      </div>
+    </div>
+
+  </div>
+
+
+
+  <script>
+    var isMobile=true
+
+    // 轉換成Panel面版樣式
+    function toPanel(){
+      $('.nav-tabs').hide()
+      var ID_count= $('.tab-pane').length
+      var ID_Arr=[]
+      var mLinkArr=[]
+      var tem_html
+
+      for(var i=0;i<ID_count;i++){
+      ID_Arr.push("#"+$('.tab-pane').eq(i).attr('id')+"_m")
+      }
+
+      for(var i=0;i<ID_count;i++){
+        tem_html=$('.nav-tabs li').eq(i)
+        tem_html.find('a').attr('data-toggle','collapse').attr('data-parent','#accordion').attr('href',ID_Arr[i])
+        mLinkArr.push(tem_html.html())
+      }
+
+      for(var i=0;i<ID_count;i++){
+        console.log(ID_Arr[i])
+      $('.tab-pane').eq(i).attr('id',ID_Arr[i].slice(1))
+      }
+
+      $('.tab-content').attr('class','panel-group').attr('id','accordion')  //複層改為panel架構
+      $('.tab-pane').removeClass("tab-pane fade active").addClass('panel-collapse collapse') //子層內容改為panel架構
+      if($('.panel-default').length<1){
+        $('.panel-collapse').wrap('<div class="panel panel-default"></div>')//子層內容包裹panel架構
+      }
+      
+
+      for(var i=0;i<2;i++){
+        $('.panel-default').eq(i).prepend(mLinkArr[i])
+      }//添增控制連結
+      isMobile=true
+    }
+
+    // 轉換成Tab頁籤樣式
+    function toTab(){
+      var count= $('.panel').length //項目總數
+      var linkArr=[] //連結數組
+      for(var i=0;i<count;i++){
+        linkArr.push($('.panel').eq(i).find('a').attr('href').slice(0,-2).slice(1))
+      }//處理連結放進數組中儲存
+
+      $('.nav-tabs').show()
+
+      $('.panel a').remove() //移除panel連結
+      
+      $('.panel-group').addClass('tab-content').attr('id','').removeClass('panel-group')//調整panel結構
+      $('.panel-collapse').unwrap()//移除panel父層結構
+
+      for(var i=0;i<count;i++){
+        $('.panel-collapse').eq(i).attr('id',linkArr[i]).addClass('tab-pane fade')
+        if($('.tab-pane').eq(i).hasClass('in')){
+          $('.tab-pane').eq(i).addClass('active')
+        }
+      }//調整panel結構class
+      for(var i=0;i<count;i++){
+        $('.tab-pane').eq(i).removeClass('panel-collapse collapse')
+      }//調整panel結構class
+
+      isMobile=false
+    }
+
+    //轉換樣式
+    function change(){
+      if(($(window).width()<991) ){
+        isMobile=true
+      }else{
+        isMobile=false
+      }
+
+      if(isMobile){
+        toPanel()
+      }else{
+        toTab()
+      }
+    }
+
+
+    change()//初始化
+
+    $(window).on("resize",change)//監聽螢幕尺寸
+
+  </script>
+
+
+</body>
+</html>

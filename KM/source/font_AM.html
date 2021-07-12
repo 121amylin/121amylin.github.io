@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      span {
+        opacity: 0;
+        transition: opacity 2s;
+      }
+      span.textEffect {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <h1 class="str">AMY LIN</h1>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"
+      integrity="sha512-WNLxfP/8cVYL9sj8Jnp6et0BkubLP31jhTG9vhL/F5uEZmg5wEzKoXp1kJslzPQWwPT1eyMiSxlKCgzHLOTOTQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 【JS】
+      // let str = document.querySelector(".str");
+      // let strArr = str.textContent.split("");
+      // let max = strArr.length;
+      // let newStr = "";
+      // for (i = 0; i < max; i++) {
+      //   newStr += "<span>" + strArr[i] + "</span>";
+      // }
+      // console.log(newStr);
+      // str.innerHTML = newStr;
+      // let num = 0;
+      // let timer = setInterval(textAm, 100);
+
+      // function textAm() {
+      //   let letter = document.querySelectorAll("span")[num];
+      //   letter.classList.add("textEffect");
+      //   num++;
+      //   if (num >=max) {
+      //     clearTimer()
+      //     return
+      //   }
+      // }
+      // function clearTimer() {
+      //   clearInterval(timer);
+      //   timer = null;
+      // }
+
+      // 【JQ】
+        let str=$('.str').text()
+        let max=str.length
+        let strArr=str.split('')
+        let newStr=''
+        for(i=0;i<max;i++){
+          newStr+='<span>'+strArr[i]+'</span>'
+        }
+        $('.str').html(newStr)
+        let num=0
+        let timer=setInterval(addAm,100)
+        function addAm(){
+          $('span').eq(num).addClass('textEffect')
+          num++
+          if(num>=max){
+            clearTimer()
+            return
+          }
+        }
+        function clearTimer(){
+          clearInterval(timer)
+          timer=null
+        }
+    </script>
+  </body>
+</html>

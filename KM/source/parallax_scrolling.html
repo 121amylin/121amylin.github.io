@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>pure javascript 視差滾動</title>
+    <style>
+      body {
+        height: 3000px;
+        background-color: #666;
+      }
+      .box {
+        border: 1px solid #fff;
+        width: 200px;
+        height: 300px;
+        margin-left: 200px;
+        margin-top: 200px;
+        margin-bottom: 200px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box"></div>
+    <br />
+    <br />
+    <br />
+    <br />
+
+    <img
+      class="pic"
+      src="https://www.paiho.com/upload/ad_list/enL_ad_21A05_v6ec39nbps.jpg"
+      alt=""
+    />
+    <br /><br /><br /><br /><br />
+    <img
+      class="pic2"
+      src="https://www.paiho.com/upload/ad_list/enL_ad_20H24_6zxjyj49i4.jpg"
+      alt=""
+    />
+    <script>
+      function Parallax(speed, element, moving, positionRatio,dalay) {
+        let el = document.querySelector(element);
+        let start = el.offsetTop + (el.height * positionRatio)*-1;
+        el.style.transition = " transform " + speed + "s";
+        el.style.transform = moving;
+        function effect() {
+            let _this = el;
+          window.setTimeout(function () {
+            if (window.pageYOffset > start) {
+              _this.style.transform = "translate(0,0)";
+            } else {
+              // 是否循環，要的話下行程式碼需要開啟
+              // _this.style.transform = moving;
+            }
+          }, dalay);
+        }
+        window.addEventListener("scroll", effect);
+      }
+      Parallax(1, ".pic", "translate(0,-900%)", 2,400);
+      Parallax(1, ".pic2", "translate(-900%,0)", 3,1000);
+    </script>
+  </body>
+</html>

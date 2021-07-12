@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .bs {
+        color: #999;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>1234</h1>
+    <hr>
+    <p>【javascript效果】</p>
+    <h1 class="str">1234</h1>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.js"
+      integrity="sha512-oL84kLQMEPIS350nZEpvFH1whU0HHGNUDq/X3WBdDAvKP7jn06gHTsCsymsoPYKF/duN8ZxzzvQgOaaZSgcYtQ=="
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      // 【JQ版】
+      // let max = $(".str").text().length;
+      // let firstHalf = $(".str").text().slice(0, 2);
+      // let lastHalf = $(".str").text().slice(2, max);
+      // let newStr = firstHalf + '<b class="bs">' + lastHalf + "</b>";
+      // $(".str").html(newStr);
+
+      // 【JS版】
+      let str = document.querySelector(".str").textContent;
+      let max = str.length;
+      let firstHalf = str.slice(0, 2);
+      let lastHalf = str.slice(2, max);
+      let newStr = firstHalf + '<b class="bs">' + lastHalf + "</b>";
+      document.querySelector(".str").innerHTML = newStr;
+    </script>
+  </body>
+</html>

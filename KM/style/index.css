@@ -198,10 +198,11 @@ body {
 
 .alert_box .alert_content_box .alert_content .close {
   cursor: pointer;
-  color: #fff;
+  color: black;
   position: absolute;
-  right: -30px;
-  top: 0;
+  right: 10px;
+  top: 10px;
+  z-index: 2;
 }
 
 ol {

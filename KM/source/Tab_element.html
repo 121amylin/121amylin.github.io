@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Document</title>
+  <style>
+    .tabMenu {}
+
+    .tabMenu .active a {
+      color: tomato;
+    }
+
+    .tabContent {
+      position: relative;
+    }
+
+    .tabContent .itemContent {
+      position: absolute;
+      background-color: #ffffff;
+      display: none;
+    }
+
+    .tabContent .itemContent.active {
+      display: block;
+    }
+  </style>
+</head>
+
+<body>
+  <ul class="tabMenu">
+    <li class="active" data-index="1"><a href="javascript:;">item1</a></li>
+    <li data-index="2"><a href="javascript:;">item2</a></li>
+  </ul>
+  <div class="tabContent">
+    <div class="itemContent itemContent1 active">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Quia explicabo
+      omnis enim. Repudiandae molestiae voluptates placeat nihil odit
+      molestias quod quibusdam expedita et. Voluptatum amet odit, tenetur
+      libero deleniti nulla alias dignissimos esse dolores adipisci quis neque
+      officiis delectus sunt voluptates rerum natus voluptatibus velit fugit
+      ratione assumenda magnam exercitationem.
+    </div>
+    <div class="itemContent itemContent2">
+      Lorem ipsum dolor sit, amet consectetur adipisicing elit. Voluptatem
+      aliquam, consectetur dolore optio quas earum asperiores iusto odit,
+      nobis dolores illum fugiat. Sequi similique a saepe consequatur tempora
+      sit repellat alias, labore corrupti quidem qui eaque animi architecto
+      facilis quis ad molestiae, magni dolores! Doloribus tempore, eveniet
+      repellat et illum odit esse amet voluptates? Facere, iste! Ad facere
+      velit unde?
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  <script>
+    var dom = $('.tabMenu li');
+    var num = dom.length;
+    for (var i = 0; i < num; i++) {
+      $(dom[i]).on('click', function (event) {
+        event.preventDefault();
+        var j = $(this).attr('data-index');
+        $('.tabMenu li').removeClass('active');
+        $(this).addClass('active');
+        $('.tabContent .itemContent').fadeOut(300);
+        $('.tabContent .itemContent' + j).fadeIn(1200);
+      })
+    }
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
+  </head>
+  <style>
+    div {
+      width: 80%;
+      margin: auto;
+      height: 500px;
+    }
+    #area1 {
+      background-color: #999999;
+    }
+    #area2 {
+      background-color: #333;
+    }
+    #area3 {
+      background-color: #666;
+    }
+    .menu{
+      position: fixed;
+    }
+    .menu .now{
+      color: red;
+    }
+  </style>
+  <body>
+    <ul class="menu">
+      <li class="item1">item1</li>
+      <li class="item2">item2</li>
+      <li class="item3">item3</li>
+    </ul>
+    <div id="area1"></div>
+    <div id="area2"></div>
+    <div id="area3"></div>
+
+    <script>
+      let num = $("li").length;
+      let area1TopArr=[];
+      let now=1;
+      for ( let i = 1; i <= num; i++) {
+        $(".item"+i).on("click", function () {
+          $("html,body").animate(
+            {
+              scrollTop: $("#area"+i).offset().top
+            },
+            800
+          );
+        });
+        area1TopArr.push($("#area"+i).offset().top);
+        // console.log(area1TopArr[i]);
+        $(window).on('scroll',function(){
+          let nowTop=$(window).scrollTop();
+          if(nowTop>=area1TopArr[i-1]){
+            for(let i = 1; i <= num; i++){
+              $('.item'+i).removeClass('now')
+            }
+            $('.item'+i).addClass('now')
+          }else{
+            $('.item'+i).removeClass('now')
+          }
+        })
+      }
+    </script>
+  </body>
+</html>
