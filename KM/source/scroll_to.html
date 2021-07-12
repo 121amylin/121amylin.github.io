@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    .wrap {
+      max-width: 1200px;
+      margin: auto;
+    }
+    .b_box {
+      max-width: ;
+      width: 100%;
+      height: 600px;
+      background-color: #ccc;
+      margin-bottom: 30px;
+    }
+    .s_box_list {
+      padding-left: 0;
+      list-style: none;
+      margin: 0 -10px;
+    }
+    .s_box_list li {
+      float: left;
+      width: calc(33.3% - 20px);
+      margin: 10px;
+      background-color: #ccc;
+      height: 300px;
+      cursor: pointer;
+    }
+  </style>
+
+</head>
+<body>
+
+  <div class="wrap">
+    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quis sit tempora doloremque natus? Maxime qui cum
+      molestias minima! Pariatur, sint similique voluptatem quibusdam animi quis iste est necessitatibus quaerat omnis
+      maxime mollitia atque neque non earum modi libero voluptate minima alias ab obcaecati perspiciatis facere
+      eligendi. Deleniti autem sit alias esse, rem in. Incidunt modi explicabo quaerat. Tenetur numquam doloribus porro
+      animi? Accusantium amet optio sapiente quaerat aliquid magnam necessitatibus eligendi commodi facere voluptas
+      facilis reprehenderit obcaecati voluptatum nihil laudantium atque quos, neque iste libero reiciendis nesciunt
+      perspiciatis repellendus. Suscipit sapiente nam minima facilis rem voluptas eius quod animi omnis?</p>
+    <div class="b_box"></div>
+    <ul class="s_box_list">
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+      <li></li>
+    </ul>
+  </div>
+
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    function scrollAm() {
+      var targerH = $('.b_box').offset().top
+      console.log(targerH)
+      $('.s_box_list li').on('click', function () {
+        $("html,body").animate({
+          scrollTop: targerH-20
+        }, 1000)
+        return false
+      })
+    }
+    $(window).on('resize', scrollAm)
+    scrollAm()
+  </script>
+
+</body>
+</html>
