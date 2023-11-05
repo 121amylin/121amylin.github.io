@@ -1,0 +1,113 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100;200;300;400;500;600;700;800;900&display=swap");
+$color: #c12720;
+html,
+body {
+  font-family: "Noto Sans TC", sans-serif;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: content-box;
+}
+img {
+  width: auto;
+  max-width: 100%;
+}
+.container {
+  width: 100%;
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: clamp(30px, 5vw, 80px) auto;
+}
+.logo {
+  width: 100%;
+  text-align: center;
+  img {
+    width: clamp(280px, 36vw, 520px);
+  }
+  span {
+    display: inline-flex;
+    width: 56px;
+    height: 56px;
+    background-color: $color;
+    margin: 4px;
+    color: #fff;
+    border-radius: 50%;
+    align-items: center;
+    justify-content: center;
+    font-size: clamp(24px, 2vw, 32px);
+    font-weight: 700;
+    &.bbg {
+      background-color: #000;
+    }
+  }
+}
+
+.area {
+  border: 6px solid #000;
+  max-width: 1024px;
+  margin: auto;
+  position: relative;
+  margin: clamp(50px, 7vw, 120px) auto;
+  padding: clamp(30px, 2.5vw, 40px) clamp(20px, 2vw, 30px);
+
+  &:nth-child(odd) {
+    border: 6px solid $color;
+    .title {
+      color: $color;
+    }
+    li {
+      background-color: rgba(193, 39, 32, 0.2);
+      a {
+        color: $color;
+      }
+    }
+  }
+}
+.title {
+  background-color: #fff;
+  padding: 10px;
+  position: absolute;
+  font-size: clamp(24px, 2.2vw, 42px);
+  font-weight: 700;
+  transform: translateX(-50%);
+  left: 50%;
+  top: -40px;
+  letter-spacing: 8px;
+  margin-left: -8px;
+  padding-left: 20px;
+}
+
+ul {
+  list-style: none;
+  padding-left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  li {
+    display: inline-block;
+    margin: 10px;
+    width: calc(20% - 20px);
+    text-align: center;
+    border-radius: 100px;
+    background-color: #e3e3e3;
+    overflow: hidden;
+    transition: transform 0.3s;
+    @media (max-width: 991px) {
+      width: calc(33.333% - 20px);
+    }
+    @media (max-width: 480px) {
+      width: calc(50% - 20px);
+    }
+    &:hover {
+      transform: translateY(-10px);
+    }
+  }
+  a {
+    display: block;
+    text-decoration: none;
+    font-size: clamp(16px, 1.5vw, 19px);
+    color: #000;
+    padding: 10px;
+  }
+}

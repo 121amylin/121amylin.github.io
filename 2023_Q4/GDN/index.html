@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>CodePen - Fancyapp examples</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/tailwindcss/2.2.19/tailwind.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.css"
+    />
+    <link rel="stylesheet" href="./style.css" />
+    <style>
+      body {
+        background-color: #333;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        min-height: 88vh;
+      }
+      h1 {
+        color: #fff;
+      }
+      a {
+        display: inline-block;
+        width: 18%;
+        height: 300px;
+        overflow: hidden;
+      }
+      a img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .carousel__track,
+      .fancybox__carousel.is-draggable .fancybox__slide,
+      .fancybox__container.is-animated[aria-hidden="false"] .fancybox__thumbs {
+        background-color: #333;
+      }
+      .carousel__slide.has-thumb {
+        padding: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- partial:index.partial.html -->
+    <h1
+      class="mt-12 mb-8 px-6 text-center text-lg md:text-2xl font-mono antialiased font-semibold"
+    >
+      GDN 作品展示
+    </h1>
+    <div class="flex flex-wrap gap-5 justify-center max-w-5xl mx-auto px-6">
+      <a data-fancybox="gallery" data-caption="" href="./01.jpg">
+        <img class="rounded" width="200" src="./01.jpg" />
+      </a>
+      <a data-fancybox="gallery" data-caption="" href="./02.jpg">
+        <img class="rounded" width="200" src="./02.jpg" />
+      </a>
+      <a data-fancybox="gallery" data-caption="" href="./03.jpg">
+        <img class="rounded" width="200" src="./03.jpg" />
+      </a>
+      <a data-fancybox="gallery" data-caption="" href="./04.jpg">
+        <img class="rounded" width="200" src="./04.jpg" />
+      </a>
+      <a data-fancybox="gallery" data-caption="" href="./05.jpg">
+        <img class="rounded" width="200" src="./05.jpg" />
+      </a>
+    </div>
+    <!-- partial -->
+    <script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.umd.js"></script>
+    <script src="./script.js"></script>
+  </body>
+</html>

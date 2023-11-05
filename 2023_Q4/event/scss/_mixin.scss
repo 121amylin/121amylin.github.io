@@ -1,0 +1,170 @@
+// RWD
+$breakpoints: ('m320': (max-width: 320px),
+  'm360': (max-width: 360px),
+  'm375': (max-width: 375px),
+  'm480': (max-width: 480px),
+  'm568': (max-width: 568px),
+  'm640': (max-width: 640px),
+  'm768': (max-width: 768px),
+  'm960': (max-width: 960px),
+  'm991': (max-width: 991px),
+  'm1024': (max-width: 1024px),
+  'm1080': (max-width: 1080px),
+  'm1280': (max-width: 1280px),
+  'm1366': (max-width: 1366px),
+  'm1440': (max-width: 1440px),
+  'm1680': (max-width: 1680px),
+  'm1920': (max-width: 1920px),
+  'm2560': (max-width: 2560px), // iMac 27
+  'm5120': (max-width: 5120px), // iMac 5k
+  'm2048': (max-width: 2048px), // 2048 x 1080
+  'm3840': (max-width: 3840px), // 3840 x 2160
+  'm7680': (max-width: 7680px), // 7680 x 4320
+  // 'tv-4k': (max-width: 4096px), //
+) !default;
+
+$rwdBoxBreakpoints: (1920,
+  1680,
+  1440,
+  1366,
+  1280,
+  1080,
+  1024,
+  991,
+  960,
+  768,
+  640,
+  480,
+  375,
+  360,
+  320,
+) !default;
+
+@mixin rwd($breakpoint) {
+
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin rwd-custom($size) {
+  @media (max-width : $size) {
+    @content;
+  }
+}
+
+
+// font-size
+@mixin font-size($size) {
+  font-size: $size;
+
+  @include rwd(m1440) {
+    font-size: ceil($size*.9);
+  }
+
+  @include rwd(m991) {
+    font-size: ceil($size*.8);
+  }
+
+  // @include rwd(m480) {
+  //   font-size: ceil($size*.7);
+  // }
+
+  // @include rwd(m320) {
+  //   font-size: ceil($size*.6);
+  // }
+}
+
+// rwdBox
+
+@mixin pic-width($width) {
+  max-width: $width;
+
+  @include rwd(m1440) {
+    max-width: ceil($width*.85);
+  }
+
+  @include rwd(m991) {
+    max-width: ceil($width*.75);
+  }
+
+  @include rwd(m480) {
+    max-width: ceil($width*.65);
+  }
+  //  @include rwd(m375) {
+  //    max-width: ceil($width*.6);
+  //  }
+
+  // @include rwd(m320) {
+  //   max-width: ceil($width*.45);
+  // }
+}
+
+
+
+@mixin rwdBox($marginTopSeting:auto, $marginBottomSeting:auto, $paddingTopSeting:unset, $paddingBottomSeting:unset) {
+  @if $marginTopSeting !=auto {
+    margin-top: $marginTopSeting;
+  }
+
+  ;
+
+  @if $marginBottomSeting !=auto {
+    margin-bottom: $marginBottomSeting*1;
+  }
+
+  ;
+
+  @if $paddingTopSeting !=unset {
+    padding-top: $paddingTopSeting*1;
+  }
+
+  ;
+
+  @if $paddingBottomSeting !=unset {
+    padding-bottom: $paddingBottomSeting*1;
+  }
+
+  ;
+
+  @each $num in $rwdBoxBreakpoints {
+    @media (max-width: #{$num}px) {
+      
+      @if $marginTopSeting !=auto {
+        margin-top: round($marginTopSeting*$num/1920)
+      }
+
+      ;
+
+      @if $marginBottomSeting !=auto {
+        margin-bottom: round($marginBottomSeting*$num/1920)
+      }
+
+      ;
+
+      @if $paddingTopSeting !=unset {
+        padding-top: round($paddingTopSeting*$num/1920)
+      }
+
+      ;
+
+      @if $paddingBottomSeting !=unset {
+        padding-bottom: round($paddingBottomSeting*$num/1920)
+      }
+
+      ;
+    }
+    
+  }
+}
