@@ -1,0 +1,196 @@
+@charset "UTF-8";
+html,
+body {
+  font: 62.5%/1 "Roboto", "微軟正黑體", Microsoft JhengHei, Arial, Helvetica, sans-serif;
+}
+
+.unit_ttit {
+  font-size: 5rem;
+  font-weight: 500;
+}
+
+@media (max-width: 1040px) {
+  .unit_ttit {
+    font-size: 4.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .unit_ttit {
+    font-size: 3.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .unit_ttit {
+    font-size: 2.8rem;
+  }
+}
+
+.main-header .logo {
+  margin-right: 35px;
+  width: 180px;
+}
+
+.main-header .logo img {
+  width: 180px;
+}
+
+.main-header #menu {
+  margin-right: 35px;
+}
+
+.main-header #menu li a {
+  padding: 10px;
+  font-size: 1.7rem;
+}
+
+.main-header .lang {
+  margin-right: 30px;
+}
+
+.main-header .lang li a {
+  font-size: 1.6rem;
+  padding: 0 6px;
+}
+
+.footer {
+  font-size: 1.4rem;
+}
+
+@media (max-width: 480px) {
+  .footer {
+    font-size: 1.2rem;
+  }
+}
+
+.about_tab_box li a {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 640px) {
+  .about_tab_box li a {
+    font-size: 1.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .about_tab_box li a {
+    font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #issues li h3 {
+    font-size: 3.2rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #issues li h3 {
+    font-size: 2.6rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #issues li p {
+    font-size: 1.6rem;
+    line-height: 2.8rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #issues li p {
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+  }
+}
+
+#horizontalTab .shpo_tab li a {
+  font-size: 2.2rem;
+}
+
+@media (max-width: 768px) {
+  #horizontalTab .shpo_tab li a {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #horizontalTab .shpo_tab li a {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 768px) {
+  #horizontalTab .textbox p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  #horizontalTab .textbox p {
+    font-size: 1.4rem;
+  }
+}
+
+#dates li .text {
+  font-size: 1.6rem;
+  line-height: 1.5;
+  padding: 4px 6px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  #dates li .text {
+    font-size: 1.5rem;
+  }
+}
+
+.server_item .server_text_box h3 {
+  font-size: 2.8rem;
+  margin-bottom: 20px;
+  font-weight: 500;
+}
+
+@media (max-width: 768px) {
+  .server_item .server_text_box h3 {
+    font-size: 2.4rem;
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .server_item .server_text_box h3 {
+    font-size: 2rem;
+    margin-bottom: 12px;
+  }
+}
+
+@media (max-width: 768px) {
+  .server_item .server_text_box p {
+    font-size: 1.6rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .server_item .server_text_box p {
+    font-size: 1.4rem;
+  }
+}
+
+.server_item .server_text_box img {
+  margin-bottom: 16px;
+}
+
+.card-back .des {
+  font-size: 1.6rem;
+  line-height: 1.5;
+}
+
+@media (max-width: 768px) {
+  .card-back .des {
+    font-size: 1.4rem;
+  }
+}
+/*# sourceMappingURL=en.css.map */

@@ -1,0 +1,62 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+.sm {
+  background-color: #222;
+}
+
+.sm .pic {
+  width: 100%;
+  max-width: 375px;
+  margin: auto;
+}
+
+img {
+  vertical-align: middle;
+  width: 100%;
+}
+
+.banner {
+  display: block;
+  width: 100%;
+  background-image: url(images/list_1_04.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 32vh;
+  background-size: cover;
+}
+
+.verA main {
+  background-color: #efefef;
+}
+
+.verB main {
+  background-color: #fff;
+}
+
+.content {
+  max-width: 1300px;
+  margin: auto;
+}
+
+footer {
+  border-top: 2px solid #888888;
+  background-image: url(images/footer_bg.jpg);
+  background-repeat: repeat;
+}
+
+.copyright {
+  background-image: url(images/footer_Rbg.jpg);
+  background-repeat: repeat-x;
+}
+
+.gotop {
+  position: fixed;
+  bottom: 5px;
+  right: 5px;
+  cursor: pointer;
+  z-index: 999;
+  opacity: 1;
+}

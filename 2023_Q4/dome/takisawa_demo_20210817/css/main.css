@@ -1,0 +1,27 @@
+* { -webkit-text-size-adjust: none; box-sizing: border-box; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; }
+
+body { margin: 0; padding: 0; text-align: center; background: #fcfcfc; }
+
+img { border: 0; padding: 0; margin: 0; vertical-align: middle; max-width: 100%; width: 100%; }
+
+.banner { width: 100%; overflow: hidden; }
+
+.header { width: 100%; display: block; background-repeat: no-repeat; background-position: top center; }
+
+.wrap { width: 100%; max-width: 1920px; text-align: center; margin: auto; }
+
+.content { width: 100%; display: block; background-repeat: no-repeat; background-position: top center; }
+
+.header { -webkit-box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); box-shadow: 0 2px 3px 0 rgba(0, 0, 0, 0.2); position: relative; z-index: 99; }
+
+.swiper-container-banner { position: relative; }
+
+.swiper-pagination-bullet { opacity: 1; width: 85px; height: 10px; border-radius: 2px; background-color: rgba(255, 255, 255, 0.5); }
+
+@media (max-width: 991px) { .swiper-pagination-bullet { width: 32px; height: 4px; } }
+
+.swiper-pagination-bullet-active { background-color: white; }
+
+.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet { margin: 16px 8px; }
+
+@media (max-width: 991px) { .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet { margin: 0 4px; } }

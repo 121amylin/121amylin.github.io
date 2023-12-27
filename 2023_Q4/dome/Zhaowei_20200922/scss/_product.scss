@@ -1,0 +1,234 @@
+.product {
+  background-image: url(../images/product_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: transparent;
+  .container{
+    padding-bottom: 120px;
+    @include rwd(m768) {
+      // background-image: url(../images/product_bg.jpg);
+      // background-size: cover;
+      // background-repeat: no-repeat;
+      // background-position: center;
+    }
+  }
+}
+
+.product_swiper {
+  max-width: 830px;
+  position: relative;
+  // padding-bottom: 120px;
+  // margin-bottom: 120px;
+
+  .item {
+    background-color: transparent;
+    display: flex;
+    flex-direction: column;
+
+    h3 {
+      font-size: 3rem;
+      font-weight: 700;
+      margin-bottom: 12px;
+      @include rwd(m768){
+        font-size: 2.8rem;
+      }
+      @include rwd(m480) {
+        font-size: 2.4rem;
+      }
+    }
+
+    .icon {
+      margin-bottom: 24px;
+    }
+
+    .product_pic_box {
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      max-height: 237px;
+      overflow: hidden;
+    }
+
+    .product_pic_box1 {
+      background-image: url(../images/product_01.png);
+    }
+
+    .product_pic_box2 {
+      background-image: url(../images/product_02.jpg);
+    }
+
+    .product_pic_box3 {
+      background-image: url(../images/product_03.jpg);
+    }
+
+    .product_pic_box4 {
+      background-image: url(../images/product_04.png);
+    }
+
+    .product_pic_box5 {
+      background-image: url(../images/product_05.jpg);
+    }
+
+    .product_pic_box6 {
+      background-image: url(../images/product_06.jpg);
+    }
+
+    .product_pic_box7 {
+      background-image: url(../images/product_07.png);
+    }
+
+    .product_pic_box8 {
+      background-image: url(../images/product_08.jpg);
+    }
+
+    .product_pic_box9 {
+      background-image: url(../images/product_09.jpg);
+    }
+
+  }
+
+}
+
+.product_swiper_box {
+  position: relative;
+  margin-top: 100px;
+
+  .swiper-button-next,
+  .swiper-button-prev {
+    position: absolute;
+
+    &:focus {
+      outline: none;
+    }
+    img{
+      @include rwd(m480) {
+        width: 14px;
+
+      }
+    }
+  }
+  .swiper-button-next{
+    @include rwd(m480){
+      right: 0;
+    }
+  }
+  .swiper-button-prev{
+    @include rwd(m480) {
+      left: 0;
+    }
+  }
+  .swiper-button-next:after,
+  .swiper-button-prev:after {
+    display: none;
+  }
+
+
+  @include rwd(m768){
+    margin-top: 50px;
+  }
+
+}
+
+.swiper-button-next.swiper-button-disabled,
+.swiper-button-prev.swiper-button-disabled{
+  opacity: 0.2;
+}
+
+// 翻牌
+
+.card-wrap {
+  width: 264px;
+  height: 237px;
+  position: relative;
+  cursor: pointer;
+  border-radius: 12px;
+  overflow: hidden;
+  &::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;right: 0;
+    background-color: #000;
+    z-index: -1;
+  }
+  img{
+    width: 100%;
+  }
+  @include rwd(m420) {
+    width: 200px;
+    height: 179px;
+    border-radius: 6px;
+  }
+}
+
+.card {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  /*preserve the back when fliping*/
+  transform: rotateY(0);
+  transform-style: preserve-3d;
+  transition: 0.5s all ease;
+  top: 0;
+  z-index: -1;
+}
+
+.card.show {
+  transform: rotateY(180deg);
+}
+
+/*front card*/
+.card-front {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+
+/*back card*/
+.card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  transform: rotateY(180deg);
+  background-color: #000000;
+
+  .card_icon_top {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    top: 25px;
+    @include rwd(m768) {
+      top: 15px;
+    }
+  }
+
+  .card_icon_bottom {
+    position: absolute;
+    transform: translateX(-50%);
+    left: 50%;
+    bottom: 25px;
+    @include rwd(m768) {
+      bottom: 15px;
+    }
+  }
+
+  .des {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    padding: 0 36px;
+    box-sizing: border-box;
+    text-align: left;
+    font-size: 1.8rem;
+    line-height: 1.5;
+    @include rwd(m768){
+      font-size: 1.6rem;
+    }
+  }
+}

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-tw">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>【瀧澤】美國分公司-新網頁提版需求</title>
+  <link rel="stylesheet" href="css/map.css">
+</head>
+
+<body>
+  <div class="wrap">
+    <div class="header">
+      <div class="container"><img class="logo" src="logo.png" alt=""></div>
+      <div class="container">
+        <ul>
+          <li><a href="https://www.takisawa.com.tw/en/index.html" target="_blank">原官網</a></li>
+          <li><a class="check" href="index.html" target="_blank">首頁</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="content">
+      <div class="container">
+        <dl>
+          <dt>關於我們</dt>
+          <dd><a class="new" href="about.html" target="_blank">詳細頁</a></dd>
+        </dl>
+        <dl>
+          <dt>產品專區</dt>
+          <dd><a class="check" href="Alllist.html" target="_blank">總攬頁</a></dd>
+          <dd><a class="check" href="list.html" target="_blank">列表頁</a></dd>
+          <dd><a class="check" href="show.html" target="_blank">詳細頁</a></dd>
+          <dd><a class="check" href="show_secmenu.html" target="_blank">下拉選單展示</a></dd>
+        </dl>
+        <dl>
+          <dt>最新消息</dt>
+          <dd><a class="new" href="news_list.html" target="_blank">列表頁</a></dd>
+          <dd><a class="new" href="news_more.html" target="_blank">詳細頁</a></dd>
+        </dl>
+        <dl>
+          <dt>下載專區</dt>
+          <dd><a class="new" href="download_login.html" target="_blank">登入頁</a></dd>
+          <dd><a class="new" href="download_list.html".html" target="_blank">列表頁</a></dd>
+        </dl>
+        <dl>
+          <dt>聯絡我們</dt>
+          <dd><a class="new" href="contact.html" target="_blank">聯絡表單</a></dd>
+        </dl>
+      </div>
+    </div>
+  </div>
+  <script>
+    var linkAll = document.querySelectorAll('a')
+    var max=linkAll.length
+    for (var i=0;i<max;i++){
+      if (linkAll[i].attributes['href'].value == "#") {
+        linkAll[i].classList.add('nolink')
+        linkAll[i].attributes["href"].value = "javascript:void(0)"
+        linkAll[i].attributes["target"].value = ""
+      }
+    }
+  </script>
+</body>
+
+</html>

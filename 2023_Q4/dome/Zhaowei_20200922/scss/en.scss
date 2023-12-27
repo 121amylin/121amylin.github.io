@@ -1,0 +1,202 @@
+@import 'responsive';
+
+// layout
+html,
+body {
+  font: 62.5%/1 "Roboto",
+    "微軟正黑體",
+    Microsoft JhengHei,
+    Arial,
+    Helvetica,
+    sans-serif;
+}
+
+.unit_ttit {
+  font-size: 5rem;
+  font-weight: 500;
+
+  @include rwd(m1040) {
+    font-size: 4.2rem;
+  }
+
+  @include rwd(m768) {
+    font-size: 3.4rem;
+  }
+
+  @include rwd(m480) {
+    font-size: 2.8rem;
+
+  }
+}
+
+.main-header .logo {
+  margin-right: 35px;
+  width: 180px;
+
+  img {
+    width: 180px;
+  }
+}
+
+
+.main-header #menu {
+  margin-right: 35px;
+
+  li a {
+    padding: 10px;
+    font-size: 1.7rem;
+  }
+}
+
+
+.main-header .lang {
+  margin-right: 30px;
+
+  li a {
+    font-size: 1.6rem;
+    padding: 0 6px;
+  }
+}
+
+.footer {
+  font-size: 1.4rem;
+
+  @include rwd(m480) {
+    font-size: 1.2rem;
+  }
+}
+
+// about
+.about_tab_box {
+  li {
+    a {
+      font-size: 2.2rem;
+
+      @include rwd(m640) {
+        font-size: 1.8rem;
+      }
+
+      @include rwd(m480) {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+#issues {
+  li {
+    h3 {
+      @include rwd(m768) {
+        font-size: 3.2rem;
+      }
+
+      @include rwd(m480) {
+        font-size: 2.6rem;
+      }
+    }
+
+    p {
+      @include rwd(m768) {
+        font-size: 1.6rem;
+        line-height: 2.8rem;
+      }
+
+      @include rwd(m480) {
+        font-size: 1.4rem;
+        line-height: 2.4rem;
+      }
+    }
+  }
+}
+
+#horizontalTab {
+  .shpo_tab {
+    li {
+      a {
+        font-size: 2.2rem;
+
+        @include rwd(m768) {
+          font-size: 1.6rem;
+        }
+
+        @include rwd(m480) {
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+
+  .textbox {
+    p {
+      @include rwd(m768) {
+        font-size: 1.6rem;
+      }
+
+      @include rwd(m480) {
+        font-size: 1.4rem;
+      }
+    }
+  }
+}
+
+#dates {
+  li {
+    .text {
+      font-size: 1.6rem;
+      line-height: 1.5;
+      padding: 4px 6px;
+      font-weight: 500;
+
+      @include rwd(m768) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+}
+
+// server
+.server_item {
+  .server_text_box {
+    h3 {
+      font-size: 2.8rem;
+      margin-bottom: 20px;
+      font-weight: 500;
+
+      @include rwd(m768) {
+        font-size: 2.4rem;
+        margin-bottom: 16px;
+      }
+
+      @include rwd(m480) {
+        font-size: 2rem;
+        margin-bottom: 12px;
+      }
+    }
+
+    p {
+      @include rwd(m768) {
+        font-size: 1.6rem;
+      }
+
+      @include rwd(m480) {
+        font-size: 1.4rem;
+      }
+    }
+
+    img {
+      margin-bottom: 16px;
+    }
+  }
+}
+
+// product
+.card-back {
+  .des {
+    font-size: 1.6rem;
+    line-height: 1.5;
+
+    @include rwd(m768) {
+      font-size: 1.4rem;
+    }
+  }
+}

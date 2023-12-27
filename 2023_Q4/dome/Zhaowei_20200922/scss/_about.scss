@@ -1,0 +1,531 @@
+/* ====關於我們==== */
+// JS CSS
+.tabbox {
+  position: relative;
+  // height: 100vh;
+  margin-top: 40px;
+
+  &::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 1) 50%, rgba(255, 255, 255, 0) 100%);
+    height: 1px;
+  }
+
+  @include rwd(m480) {
+    margin-top: 20px;
+  }
+}
+
+.box1 {
+  width: 100%;
+  // position: absolute;
+  position: relative;
+  opacity: 0;
+  transition: all 1s;
+  height: 0;
+}
+
+.box1.now,
+.box2.now {
+  height: auto;
+}
+
+.box2 {
+  // position: absolute;
+  position: relative;
+  opacity: 0;
+  transition: all 0.7s;
+  height: 0;
+}
+
+.now {
+  opacity: 1;
+  z-index: 1;
+}
+
+// tit
+.about {
+  background-image: url(../images/about_bg.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+
+  .unit_ttit {
+    // margin-top: 107px;
+  }
+}
+
+// 發展歷史
+.about_tab_box {
+  font-size: 0;
+  text-align: center;
+  max-width: 600px;
+  margin: auto;
+
+  li {
+    width: 50%;
+    display: inline-block;
+    position: relative;
+    // margin: 0 30px;
+    cursor: pointer;
+    opacity: 20%;
+    transition: opacity 0.4s;
+
+    &.now {
+      opacity: 100%;
+
+      &:hover {
+        opacity: 100%;
+      }
+    }
+
+    &:hover {
+      opacity: 50%;
+    }
+
+    img {
+      width: 100%;
+      max-width: 242px;
+
+      @include rwd(m640) {
+        max-width: 200px;
+      }
+
+      @include rwd(m480) {
+        max-width: 130px;
+      }
+    }
+
+    a {
+      font-size: 2.4rem;
+      font-weight: 700;
+      color: #ffffff;
+      // letter-spacing: 2.4rem;
+      position: absolute;
+      width: 100%;
+      z-index: 1;
+      transform: translate(-50%, -50%);
+      left: 50%;
+      top: 50%;
+      text-align: center;
+
+      span {
+        letter-spacing: 0;
+        margin: 0 10px;
+
+        @include rwd(m640) {
+          margin: 0 6px;
+        }
+
+        @include rwd(m480) {
+          margin: 0 4px;
+        }
+      }
+
+      @include rwd(m640) {
+        font-size: 2.1rem;
+      }
+
+      @include rwd(m480) {
+        font-size: 1.6rem;
+      }
+    }
+  }
+}
+
+#dates {
+  li {
+    position: relative;
+
+    a:hover {
+      opacity: 0.5;
+    }
+
+    a:hover+.text {
+      opacity: 0.5;
+    }
+
+    .selected+.text {
+      opacity: 1;
+    }
+
+    .text {
+      opacity: 0;
+      margin-top: 16px;
+      position: relative;
+      // width: 7.2rem;
+      width: calc(100% - 32px);
+      transform: translateX(-50%);
+      left: 50%;
+      font-size: 1.7rem;
+      font-weight: 700;
+      color: #fff;
+      padding: 9px 14px;
+      background-color: #464950;
+      background: linear-gradient(to bottom, #393c43 0%, #42454c 50%, #1e212a 50%, #1e212a 100%);
+      border-radius: 3px;
+      transition: opacity 0.7s;
+
+      &:hover {
+        display: block;
+      }
+
+      &::after {
+        content: '';
+        position: absolute;
+        transform: translateX(-50%);
+        left: 50%;
+        top: -6px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: 0 3px 6px 3px;
+        border-color: transparent transparent #31353c transparent;
+      }
+
+      @include rwd(m768) {
+        font-size: 1.5rem;
+      }
+    }
+  }
+
+}
+
+.opacitydown {
+  opacity: 20%;
+}
+
+//發展歷史RWD
+.issues_box {
+  overflow: hidden;
+}
+
+.dates_box {
+  overflow: hidden;
+}
+
+#timeline,
+#dates,
+#issues,
+#issues li {
+  @include rwd(m768) {
+    width: 520px;
+  }
+
+  @include rwd(m640) {
+    width: 360px;
+  }
+
+  @include rwd(m480) {
+    width: 260px;
+  }
+
+  @include rwd(m375) {
+    width: 200px;
+  }
+}
+
+#next,
+#prev {
+  @include rwd(m480) {
+    background-size: 14px;
+  }
+}
+
+// #timeline,
+// #issues,
+// #grad_left,
+// #grad_right {
+//   @include rwd(m768) {
+//     min-height: 540px;
+//   }
+
+//   @include rwd(m640) {
+//     min-height: 640px;
+//   }
+
+//   @include rwd(m480) {
+//     min-height: 740px;
+//   }
+
+//   @include rwd(m375) {
+//     min-height: 860px;
+//   }
+// }
+.about.fp-section {
+  height: auto !important;
+
+  .fp-tableCell {
+    height: auto !important;
+
+    .fp-scrollable {
+      height: auto !important;
+
+    }
+  }
+}
+
+#issues {
+
+  @media (max-width:768px),
+  (orientation: portrait) {
+    padding-bottom: 70px;
+  }
+}
+
+#issues li h3 {
+  @include rwd(m768) {
+    margin-top: 32px;
+    margin-bottom: 10px;
+    font-size: 4.2rem;
+  }
+
+  @include rwd(m480) {
+    margin-top: 16px;
+    margin-bottom: 4px;
+    font-size: 3.6rem;
+  }
+}
+
+#issues li h4 {
+  margin: 8px 0 10px 0;
+  padding: 9px 14px;
+  color: #ffffff;
+  font-size: 1.9rem;
+  font-weight: 700;
+  background-color: #464950;
+  position: relative;
+  background: linear-gradient(to bottom, #393c43 0%, #42454c 50%, #1e212a 50%, #1e212a 100%);
+  border-radius: 3px;
+}
+
+#issues li p {
+  @include rwd(m768) {
+    font-size: 1.7rem;
+    line-height: 3.2rem;
+  }
+
+  @include rwd(m480) {
+    font-size: 1.6rem;
+    line-height: 3rem;
+  }
+}
+
+#dates li {
+  img {
+    @include rwd(m375) {
+      width: 94px;
+    }
+  }
+
+  a {
+    @include rwd(m640) {
+      padding: 0 10px;
+    }
+
+    @include rwd(m375) {
+      padding: 0 4px;
+    }
+  }
+}
+
+
+//賭場介紹
+#horizontalTab {
+  font-size: 0;
+
+  .shpo_tab {
+    font-size: 2.4rem;
+    margin-top: 42px;
+    margin-bottom: 48px;
+    text-align: center;
+
+    li {
+      position: relative;
+      margin: 0 27px;
+
+      a {
+        color: #000000;
+        font-size: 2.4rem;
+        // font-family: 'Roboto',
+        // "Microsoft JhengHei",
+        // '微軟正黑體';
+
+        span {
+          position: absolute;
+          transform: translate(-50%, -50%);
+          top: 50%;
+          left: 50%;
+          display: block;
+          width: 100%;
+          font-weight: 700;
+        }
+
+        img {
+          max-width: 140px;
+
+          @include rwd(m640) {
+            max-width: 120px;
+          }
+
+          @include rwd(m480) {
+            max-width: 88px;
+          }
+        }
+
+        @include rwd(m768) {
+          font-size: 2rem;
+        }
+
+        @include rwd(m480) {
+          font-size: 1.6rem;
+        }
+      }
+
+      @include rwd (m768) {
+        margin: 0 5px;
+      }
+
+      @include rwd (m480) {
+        margin: 0;
+      }
+
+    }
+
+    .r-tabs-state-default {
+      opacity: 30%;
+    }
+
+    .r-tabs-state-active {
+      opacity: 100%;
+    }
+
+    @include rwd(m768) {
+      margin-top: 20px;
+      margin-bottom: 24px;
+    }
+  }
+
+  .r-tabs-panel {
+    text-align: center;
+  }
+
+  .picbox {
+    display: inline-block;
+    margin-right: 26px;
+
+    img {
+      width: 100%;
+      max-width: 354px;
+    }
+
+    .about_into_pic_box {
+      overflow: hidden;
+      border-radius: 10px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-size: cover;
+
+      @include rwd(m768) {
+        border-radius: 6px;
+      }
+      @include rwd(m480) {
+        border-radius: 3px;
+      }
+    }
+
+    @include rwd(m768) {
+      // width: 100%;
+      max-width: 180px;
+      margin-bottom: 14px;
+      text-align: center;
+      margin-right: 0;
+      // margin-bottom: 20px;
+    }
+
+    @include rwd(m480) {
+      max-width: 120px;
+      text-align: center;
+    }
+  }
+
+  #tab-1 {
+    .about_into_pic_box {
+      background-image: url(../images/about_into_pic_01.png);
+    }
+  }
+
+  #tab-2 {
+    .about_into_pic_box {
+      background-image: url(../images/about_into_pic_02.jpg);
+    }
+  }
+
+  #tab-3 {
+    .about_into_pic_box {
+      background-image: url(../images/about_into_pic_03.jpg);
+    }
+  }
+
+  .textbox {
+    display: inline-block;
+    width: calc(100% - 380px);
+    vertical-align: top;
+    text-align: left;
+
+    p {
+      font-size: 1.8rem;
+      line-height: 1.5;
+      color: #ffffff;
+      margin-bottom: 1rem;
+
+      @include rwd(m480) {
+        font-size: 1.6rem;
+      }
+    }
+
+    @include rwd(m768) {
+      width: 100%;
+      // width: calc(100% - 206px);
+    }
+
+    @include rwd(m480) {
+      width: 100%;
+    }
+  }
+}
+
+//賭場介紹-手機版頁籤
+@include rwd(m768) {
+  .horizontalTab_box2 {
+    width: 100%;
+
+  }
+
+  #horizontalTab {
+    margin-top: 30px;
+
+    .r-tabs-accordion-title {
+      text-align: center;
+      background: linear-gradient(to bottom, #656d77 0%, #dbdbdb 4%, #ffffff 9%, #bcbcbc 80%, #707881 97%, #444b53 100%);
+      border: 1px solid #707881;
+      border-radius: 5px;
+      margin-bottom: 6px;
+
+      a {
+        padding: 12px 0;
+        font-size: 1.8rem;
+        color: #000;
+        font-weight: 700;
+        display: block;
+
+        img {
+          display: none;
+        }
+      }
+    }
+  }
+}

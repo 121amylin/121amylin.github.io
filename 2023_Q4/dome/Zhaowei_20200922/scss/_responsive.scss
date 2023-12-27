@@ -1,0 +1,36 @@
+$breakpoints: (
+  'm320': (max-width: 320px),
+  'm375': (max-width: 375px),
+  'm420': (max-width: 420px),
+  'm480': (max-width: 480px),
+  'm640': (max-width: 640px),
+  'm768': (max-width: 768px),
+  'm991': (max-width: 991px),
+  'm1040': (max-width: 1040px),
+) !default;
+
+@mixin rwd($breakpoint) {
+  // If the key exists in the map
+  @if map-has-key($breakpoints, $breakpoint) {
+    // Prints a media query based on the value
+    @media #{inspect(map-get($breakpoints, $breakpoint))} {
+      @content;
+    }
+  }
+  // If the key doesn't exist in the map
+  @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+    +"Available breakpoints are: #{map-keys($breakpoints)}.";
+  }
+}
+
+@mixin rwd-custom($size) {
+	@media (max-width : $size) {
+		@content;
+	}
+}
+//@include rwd(768){color:#000;}
+
+
+
+

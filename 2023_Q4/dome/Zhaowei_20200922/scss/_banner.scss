@@ -1,0 +1,75 @@
+.banner {
+  height: 100vh;
+  background-image: url(../images/banner.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  position: relative;
+
+  .container {
+    position: relative;
+    height: 100vh;
+  }
+
+  .banner_btn {
+    position: absolute;
+    left: 124px;
+    top: 53%;
+    transition: transform 0.5s;
+
+    img.have_an {
+      animation-name: banner_btn_an;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+
+
+      @include rwd(m768) {
+        max-width: 200px;
+      }
+
+      @media (max-width:768px)and(orientation: landscape) {
+        max-width: 160px;
+      }
+    }
+
+    @include rwd(m1040) {
+      left: 60px;
+    }
+
+    @media (max-width:1024px)and(orientation: portrait) {
+      transform: translateX(-50%);
+      left: 50%;
+    }
+
+    @include rwd(m768) {
+      transform: translateX(-50%);
+      left: 50%;
+    }
+
+    @media (max-width:768px),
+    (orientation: portrait) {
+      top: 68%;
+    }
+  }
+
+  @media (max-width:768px),
+  (orientation: portrait) {
+    background-position: 61% center;
+  }
+
+}
+
+
+@keyframes banner_btn_an {
+  0% {
+    transform: translateY(0);
+  }
+
+  50% {
+    transform: translateY(20px);
+  }
+
+  100% {
+    transform: translateY(0);
+  }
+}

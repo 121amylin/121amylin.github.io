@@ -1,0 +1,86 @@
+.contact {
+  text-align: center;
+  background-image: url(../images/conact_bg.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center bottom;
+  position: relative;
+  background-color: #020820;
+
+  .container {
+    padding-bottom: 100px;
+    @include rwd(m768){
+      padding-bottom: 200px;
+    }
+  }
+
+  p {
+    margin-top: 100px;
+    font-size: 2.2rem;
+    line-height: 1.5;
+    color: #ffffff;
+    margin-bottom: 60px;
+
+    @include rwd(m768) {
+      font-size: 2rem;
+      margin-bottom: 40px;
+      margin-top: 30px;
+    }
+
+    @include rwd(m480) {
+      font-size: 1.7rem;
+      margin-bottom: 20px;
+    }
+  }
+
+  .fp-tableCell {
+    vertical-align: top;
+  }
+
+  .unit_ttit {
+    padding-top: 15vh;
+    margin-top: 0;
+
+    @include rwd(m768) {
+      padding-top: 0;
+    }
+  }
+
+  @include rwd(m480) {
+    background-size: 140%;
+    background-position: left bottom;
+  }
+
+  .contact_btn {
+    display: inline-block;
+    background-image: url(../images/contact_btn_bg.png);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center bottom;
+    font-size: 3rem;
+    color: #ffffff;
+    padding: 22px 44px;
+    border: 1px solid #fff;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: background-size transform 0.3s;
+
+    &:hover {
+      background-size: 240%;
+      transform: translateY(-6px);
+    }
+
+    @include rwd(m768) {
+      font-size: 2.6rem;
+    }
+
+    @include rwd(m480) {
+      font-size: 2.3rem;
+      padding: 12px 16px;
+
+      img {
+        width: 20px;
+      }
+    }
+  }
+}

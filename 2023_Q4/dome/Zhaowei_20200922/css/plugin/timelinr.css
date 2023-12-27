@@ -1,0 +1,219 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background: #222;
+  font-family: Georgia, serif;
+  color: #fff;
+  font-size: 14px;
+}
+
+a {
+  color: #ffffcc;
+  text-decoration: none;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+a:hover,
+a.selected {
+  /* color: #ffcc00; */
+}
+
+h1,
+h2,
+h4,
+h5,
+h6 {
+  text-align: center;
+  color: #ccc;
+  text-shadow: #000 1px 1px 2px;
+  margin-bottom: 5px;
+}
+
+h1 {
+  font-size: 18px;
+}
+
+h2 {
+  font-size: 14px;
+}
+
+.sociales {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+#timeline {
+  width: 680px;
+  /* height: 640px; */
+  /* overflow: hidden; */
+  margin: 0 auto;
+  position: relative;
+  /* background: url('../../images/dot.gif') left 45px repeat-x; */
+}
+
+#dates {
+  width: 680px;
+  /* height: 150px; */
+  /* overflow: hidden; */
+  /* position: absolute; */
+  /* bottom: 0; */
+  /* margin: 0 !important; */
+  display: flex;
+}
+
+#dates li {
+  position: relative;
+  list-style: none;
+  float: left;
+  /* font-size: 24px; */
+  text-align: center;
+  /* padding: 0 15px; */
+  /* background: url('../../images/biggerdot.png') center bottom no-repeat; */
+}
+#dates li a{
+  padding: 0 15px;
+  position: relative;
+}
+#dates a{
+  display: block;
+  opacity: 15%;
+  transition: opacity 0.3s;
+}
+#dates a span {
+  position: absolute;
+  font-size: 2rem;
+  font-weight: 700;
+  color: #ffffff;
+  transform: translate(-50%,-50%);
+  top: 50%;left: 50%;
+
+}
+
+#dates .selected {
+  font-size: 2rem;
+  opacity: 100%;
+}
+
+#issues {
+  width: 680px;
+  /* height: 640px; */
+  /* overflow: hidden; */
+  /* display: flex;flex-wrap: nowrap; */
+  padding-bottom: 110px;
+}
+
+#issues li {
+  width: 680px;
+  /* height: 640px; */
+  list-style: none;
+  float: left;
+  position: relative;
+}
+
+#issues li::after {
+  content: '';
+  position: absolute;
+  width: 30px;
+  height: 83px;
+  background-image: url(../../images/about_g.png);
+  background-repeat: no-repeat;
+  background-size: contain;
+  transform: translatex(-50%);
+  left: 50%;
+  bottom: -100px;
+}
+
+#issues li.selected img {
+  -webkit-transform: scale(1.1, 1.1);
+  transform: scale(1.1, 1.1);
+}
+
+#issues li img {
+  float: left;
+  margin: 10px 30px 10px 50px;
+  background: transparent;
+  -ms-filter: "progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF,endColorstr=#00FFFFFF)";
+  /* IE 8 */
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorstr=#00FFFFFF, endColorstr=#00FFFFFF);
+  /* IE 6 & 7 */
+  zoom: 1;
+  -webkit-transition: all 2s ease-in-out;
+  transition: all 2s ease-in-out;
+  -webkit-transform: scale(0.7, 0.7);
+  transform: scale(0.7, 0.7);
+}
+
+#issues li h3 {
+  font-family: 'Roboto',sans-serif;
+  text-align: center;
+  color: #fff;
+  font-size: 4.6rem;
+  font-weight: 700;
+  font-style: italic;
+  margin-top: 64px;
+  margin-bottom: 36px;
+}
+
+#issues li p {
+  font-size: 1.8rem;
+  line-height: 4rem;
+  font-weight: normal;
+  text-shadow: #000 1px 1px 2px;
+}
+
+#grad_left,
+#grad_right {
+  width: 100px;
+  /* height: 640px; */
+  position: absolute;
+  top: 0;
+}
+
+#grad_left {
+  left: 0;
+  background: url('../../images/grad_left.png') repeat-y;
+}
+
+#grad_right {
+  right: 0;
+  background: url('../../images/grad_right.png') repeat-y;
+}
+
+#next,
+#prev {
+  position: absolute;
+  top: 0;
+  font-size: 70px;
+  top: 170px;
+  width: 22px;
+  height: 44px;
+  background-position: 0 0;
+  background-repeat: no-repeat;
+  text-indent: -9999px;
+  overflow: hidden;
+}
+
+/* #next:hover,
+      #prev:hover {
+        background-position: 0 -76px;
+      } */
+#next {
+  right: 0;
+  background-image: url('../../images/arrow-r.png');
+  display: block !important;
+}
+
+#prev {
+  left: 0;
+  background-image: url('../../images/arrow-l.png');
+  display: block !important;
+}
+
+#next.disabled,
+#prev.disabled {
+  opacity: 0.2;
+}
