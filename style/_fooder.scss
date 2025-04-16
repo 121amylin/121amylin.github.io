@@ -1,0 +1,39 @@
+.footer {
+  background-color: $color_grey_2;
+  font-size: 12px;
+  padding-top: 30px;
+  @media (min-width: 991px) {
+    font-size: 16px;
+  }
+  .footer_logo {
+    max-height: 52px;
+  }
+}
+.menu_footer {
+  list-style: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-left: 0;
+  li {
+    line-height: 12px;
+    @media (min-width: 991px) {
+      line-height: 16px;
+    }
+    + li {
+      border-left: 1px solid $color_main;
+    }
+  }
+  a {
+    color: $color_main;
+    padding: 0 8px 4px 8px;
+    font-size: 12px;
+    line-height: 12px;
+    font-weight: 600;
+    @media (min-width: 991px) {
+      line-height: 16px;
+      font-size: 16px;
+    }
+  }
+}
