@@ -994,6 +994,7 @@ img.mfp-img {
     -webkit-box-align: start;
         -ms-flex-align: start;
             align-items: start;
+    gap: 30px;
   }
 }
 .list_case .item {
