@@ -330,6 +330,9 @@ a {
 .color_sec {
   color: #A58968 !important;
 }
+.color_sec * {
+  color: #A58968 !important;
+}
 
 .btn_more {
   width: 114px;
