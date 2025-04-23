@@ -42,26 +42,45 @@ new WOW().init();
 
 // 主選單
 window.addEventListener("load", () => {
-  document
-    .querySelectorAll(".nested-dropdown-menu .dropdown-toggle")
-    .forEach((dropdown) => {
-      dropdown.addEventListener("click", (event) => {
-        // 避免打開內部下拉選單，外部被關閉
-        event.stopPropagation();
-      });
-
-      dropdown.addEventListener("hidden.bs.dropdown", (event) => {
-        const subDropdown =
-          event.target.parentElement.querySelector(".dropdown-submenu");
-
-        // 如果是關閉下拉選單，子下拉選單也一併關閉
-        subDropdown.querySelectorAll(".show").forEach(
-          /** @param {HTMLElement} element */ (element) => {
-            element.classList.remove("show");
-          }
-        );
-      });
+  // 處理所有 dropdown
+  document.querySelectorAll(".nav-item.dropdown").forEach((dropdown) => {
+    dropdown.addEventListener("mouseenter", () => {
+      const menu = dropdown.querySelector(".dropdown-menu");
+      if (menu) {
+        menu.classList.add("show");
+        dropdown.classList.add("show");
+      }
     });
+
+    dropdown.addEventListener("mouseleave", () => {
+      const menu = dropdown.querySelector(".dropdown-menu");
+      if (menu) {
+        menu.classList.remove("show");
+        dropdown.classList.remove("show");
+
+        // 移除所有子選單的 show
+        menu.querySelectorAll(".dropdown-menu").forEach((submenu) => {
+          submenu.classList.remove("show");
+          submenu.parentElement?.classList.remove("show");
+        });
+      }
+    });
+  });
+
+  // 處理所有子下拉選單（第二層）
+  document.querySelectorAll(".dropdown-submenu").forEach((submenuWrapper) => {
+    const parent = submenuWrapper.parentElement;
+
+    parent?.addEventListener("mouseenter", () => {
+      submenuWrapper.classList.add("show");
+      parent.classList.add("show");
+    });
+
+    parent?.addEventListener("mouseleave", () => {
+      submenuWrapper.classList.remove("show");
+      parent.classList.remove("show");
+    });
+  });
 });
 
 var swiper = new Swiper(".mySwiper", {

@@ -104,7 +104,7 @@
   justify-content: space-between;
   flex-wrap: wrap;
   margin-bottom: clamp(24px, 4vw, 80px);
-  @media (min-width: 991px) {
+  @media (min-width: 992px) {
     gap: 8px;
   }
   .card {
@@ -113,7 +113,7 @@
     border-radius: 10px;
     margin-top: 12px;
 
-    @media (min-width: 991px) {
+    @media (min-width: 992px) {
       width: calc(50% - 8px);
     }
     img {

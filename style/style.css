@@ -73,7 +73,7 @@ a {
 .nested-dropdown-menu li {
   position: relative;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .nested-dropdown-menu li + li {
     border-top: 1px dashed #c3d0dc;
   }
@@ -106,7 +106,12 @@ a {
 #navbarTogglerDemo01 .dropdown-menu {
   border: none;
 }
-@media (min-width: 991px) {
+@media (max-width: 991px) {
+  #navbarTogglerDemo01 .dropdown-menu {
+    display: block;
+  }
+}
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .dropdown-menu {
     background-color: #ecf0f3;
     margin-left: 4px;
@@ -142,7 +147,7 @@ a {
   transition: transform 0.2s;
   transition: transform 0.2s, -webkit-transform 0.2s;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .dropdown-toggle::after {
     background-image: none;
     border-top: 0.3em solid;
@@ -157,10 +162,16 @@ a {
   -webkit-transform: rotate(0);
           transform: rotate(0);
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .dropdown-toggle.show::after {
     -webkit-transform: rotate(-90deg);
             transform: rotate(-90deg);
+  }
+}
+@media (max-width: 991px) {
+  #navbarTogglerDemo01 .navbar-nav {
+    overflow-y: scroll;
+    max-height: 80vh;
   }
 }
 #navbarTogglerDemo01 .navbar-nav > .nav-item {
@@ -169,7 +180,7 @@ a {
 #navbarTogglerDemo01 .navbar-nav > .nav-item > .nav-link {
   background-color: #ecf0f3;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .navbar-nav > .nav-item > .nav-link {
     background-color: transparent;
   }
@@ -177,7 +188,7 @@ a {
 #navbarTogglerDemo01 .navbar-nav > .nav-item > .nav-link.show {
   background-color: #f3f0ef;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .navbar-nav > .nav-item > .nav-link.show {
     background-color: transparent;
   }
@@ -185,7 +196,7 @@ a {
 #navbarTogglerDemo01 .navbar-nav > .nav-item > .dropdown-menu > .nav-item + .nav-item {
   border-top: #ecf0f3 1px solid;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .navbar-nav > .nav-item > .dropdown-menu > .nav-item + .nav-item {
     border-top: 1px dashed #c3d0dc;
   }
@@ -195,7 +206,7 @@ a {
   color: #595959;
   border-radius: 99px;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .navbar-nav > .nav-item .nav-link {
     padding: 6px 10px;
   }
@@ -210,7 +221,7 @@ a {
   border-radius: 99px;
   background-color: #ecf0f3;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   #navbarTogglerDemo01 .navbar-nav > li > .nav-link {
     background-color: transparent;
     padding: 6px 10px;
@@ -237,19 +248,24 @@ a {
 }
 
 @media (min-width: 992px) {
-  .dropdown-menu > li:hover > .dropdown-submenu {
-    display: none;
-  }
   #navbarTogglerDemo01 .dropdown-toggle.show + .dropdown-menu {
     display: block;
   }
 }
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
+}
+
 .footer {
   background-color: #F4F4F4;
   font-size: 12px;
   padding-top: 30px;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .footer {
     font-size: 16px;
   }
@@ -276,7 +292,7 @@ a {
 .menu_footer li {
   line-height: 12px;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .menu_footer li {
     line-height: 16px;
   }
@@ -291,7 +307,7 @@ a {
   line-height: 12px;
   font-weight: 600;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .menu_footer a {
     line-height: 16px;
     font-size: 16px;
@@ -758,7 +774,7 @@ a {
       flex-wrap: wrap;
   margin-bottom: clamp(24px, 4vw, 80px);
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .list_card {
     gap: 8px;
   }
@@ -769,7 +785,7 @@ a {
   border-radius: 10px;
   margin-top: 12px;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .list_card .card {
     width: calc(50% - 8px);
   }
@@ -947,12 +963,12 @@ a {
   color: #8a8a8a;
   margin-bottom: 4px;
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .box_sep .tit {
     font-size: 16px;
   }
 }
-@media (min-width: 991px) {
+@media (min-width: 992px) {
   .box_sep p,
   .box_sep li {
     font-size: 18px;

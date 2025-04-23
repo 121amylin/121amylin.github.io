@@ -51,7 +51,7 @@
   position: relative;
 
   + li {
-    @media (min-width: 991px) {
+    @media (min-width: 992px) {
       border-top: 1px dashed #c3d0dc;
     }
   }
@@ -85,7 +85,10 @@
   flex-shrink: 0;
   .dropdown-menu {
     border: none;
-    @media (min-width: 991px) {
+    @media (max-width: 991px) {
+      display: block;
+    }
+    @media (min-width: 992px) {
       background-color: #ecf0f3;
       margin-left: 4px;
     }
@@ -108,7 +111,7 @@
       background-repeat: no-repeat;
       transform: rotate(-90deg);
       transition: transform 0.2s;
-      @media (min-width: 991px) {
+      @media (min-width: 992px) {
         // display: none;
         background-image: none;
         border-top: 0.3em solid;
@@ -123,23 +126,27 @@
       &::after {
         transform: rotate(0);
 
-        @media (min-width: 991px) {
+        @media (min-width: 992px) {
           transform: rotate(-90deg);
         }
       }
     }
   }
   .navbar-nav {
+    @media (max-width: 991px) {
+      overflow-y: scroll;
+      max-height: 80vh;
+    }
     > .nav-item {
       margin: 2px 0;
       > .nav-link {
         background-color: #ecf0f3;
-        @media (min-width: 991px) {
+        @media (min-width: 992px) {
           background-color: transparent;
         }
         &.show {
           background-color: #f3f0ef;
-          @media (min-width: 991px) {
+          @media (min-width: 992px) {
             background-color: transparent;
           }
         }
@@ -149,7 +156,7 @@
           + .nav-item {
             border-top: #ecf0f3 1px solid;
 
-            @media (min-width: 991px) {
+            @media (min-width: 992px) {
               border-top: 1px dashed #c3d0dc;
             }
           }
@@ -159,7 +166,7 @@
         padding: 12px 20px;
         color: $color_grey_1;
         border-radius: 99px;
-        @media (min-width: 991px) {
+        @media (min-width: 992px) {
           padding: 6px 10px;
         }
       }
@@ -171,7 +178,7 @@
         color: #595959;
         border-radius: 99px;
         background-color: #ecf0f3;
-        @media (min-width: 991px) {
+        @media (min-width: 992px) {
           background-color: transparent;
           padding: 6px 10px;
         }
@@ -192,19 +199,26 @@
     .dropdown-item {
       padding: 6px 20px;
       color: $color_grey_1;
-      @media (min-width:992px) {
+      @media (min-width: 992px) {
         padding: 12px 20px;
-        
       }
     }
   }
 }
 
 @media (min-width: 992px) {
-  .dropdown-menu > li:hover > .dropdown-submenu {
-    display: none;
-  }
+  // .dropdown-menu > li:hover > .dropdown-submenu {
+  //   display: none;
+  // }
   #navbarTogglerDemo01 .dropdown-toggle.show + .dropdown-menu {
     display: block;
   }
+}
+
+.dropdown-menu {
+  display: none;
+}
+
+.dropdown-menu.show {
+  display: block;
 }
