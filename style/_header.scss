@@ -47,12 +47,14 @@
   position: static;
 }
 
-.nested-dropdown-menu li {
-  position: relative;
+.nested-dropdown-menu {
+  li {
+    position: relative;
 
-  + li {
-    @media (min-width: 992px) {
-      border-top: 1px dashed #c3d0dc;
+    + li {
+      @media (min-width: 992px) {
+        border-top: 1px dashed #c3d0dc;
+      }
     }
   }
 }
@@ -85,9 +87,13 @@
   flex-shrink: 0;
   .dropdown-menu {
     border: none;
-    @media (max-width: 991px) {
+    display: none;
+    &.show {
       display: block;
     }
+    // @media (max-width: 991px) {
+    //   display: block;
+    // }
     @media (min-width: 992px) {
       background-color: #ecf0f3;
       margin-left: 4px;
@@ -99,39 +105,31 @@
     justify-content: space-between;
     padding: 12px 20px;
     color: $color_grey_1;
+
     &::after {
-      content: "";
-      display: inline-block;
-      width: 16px;
-      height: 16px;
-      border-color: transparent;
-      background-image: url("../images/arr_d.png");
-      background-size: 16px;
-      background-position: center;
-      background-repeat: no-repeat;
-      transform: rotate(-90deg);
-      transition: transform 0.2s;
+      display: none;
+    }
+  }
+  .nav-item {
+    position: relative;
+    @media (min-width: 992px) {
+      padding-right: 20px;
+    }
+    .gg-arrow-right {
+      position: absolute;
+      right: 18px;
+      top: 12px;
       @media (min-width: 992px) {
         // display: none;
-        background-image: none;
-        border-top: 0.3em solid;
-        border-right: 0.3em solid transparent;
-        border-bottom: 0;
-        border-left: 0.3em solid transparent;
-        width: auto;
-        height: auto;
-      }
-    }
-    &.show {
-      &::after {
-        transform: rotate(0);
-
-        @media (min-width: 992px) {
-          transform: rotate(-90deg);
-        }
+        // font-size: 12px;
+        transform: scale(0.7);
+        width: 16px;
+        right: 10px;
+        top: 8px;
       }
     }
   }
+
   .navbar-nav {
     @media (max-width: 991px) {
       overflow-y: scroll;
