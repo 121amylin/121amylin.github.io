@@ -26,7 +26,7 @@
       display: none;
     }
   }
-  &[aria-expanded="true"] {
+  &[aria-expanded="false" ] {
     img {
       &:first-child {
         display: none;
@@ -132,7 +132,7 @@
 
   .navbar-nav {
     @media (max-width: 991px) {
-      overflow-y: scroll;
+      overflow-y: auto;
       max-height: 80vh;
     }
     > .nav-item {

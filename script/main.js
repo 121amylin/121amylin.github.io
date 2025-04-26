@@ -42,6 +42,8 @@ new WOW().init();
 
 // 主選單
 
+
+
 $('.gg-arrow-right').on('click',function(){
   $(this).siblings('.dropdown-menu').toggleClass('show')
 })
