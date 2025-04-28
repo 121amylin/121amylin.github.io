@@ -29,6 +29,16 @@
   &[aria-expanded="false" ] {
     img {
       &:first-child {
+        display: block;
+      }
+      &:last-child {
+        display:none ;
+      }
+    }
+  }
+  &[aria-expanded="true" ] {
+    img {
+      &:first-child {
         display: none;
       }
       &:last-child {
@@ -219,4 +229,11 @@
 
 .dropdown-menu.show {
   display: block;
+}
+
+.d-mobile-block{
+  @media (max-width:991px) {
+    display: block !important;
+    
+  }
 }

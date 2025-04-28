@@ -54,9 +54,15 @@ a {
   display: none;
 }
 .navbar-toggler[aria-expanded=false] img:first-child {
-  display: none;
+  display: block;
 }
 .navbar-toggler[aria-expanded=false] img:last-child {
+  display: none;
+}
+.navbar-toggler[aria-expanded=true] img:first-child {
+  display: none;
+}
+.navbar-toggler[aria-expanded=true] img:last-child {
   display: block;
 }
 .navbar-toggler:focus {
@@ -244,6 +250,12 @@ a {
 
 .dropdown-menu.show {
   display: block;
+}
+
+@media (max-width: 991px) {
+  .d-mobile-block {
+    display: block !important;
+  }
 }
 
 .footer {
