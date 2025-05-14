@@ -977,9 +977,14 @@ a {
   background-color: #fff;
 }
 
+.mfp-figure:after {
+  display: none;
+}
+
 img.mfp-img {
   padding: 0 !important;
   border-radius: 10px;
+  max-height: 80vh !important;
 }
 
 .mfp-image-holder .mfp-content {
