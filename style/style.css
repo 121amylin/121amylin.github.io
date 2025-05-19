@@ -271,6 +271,13 @@ a {
 .footer .footer_logo {
   max-height: 52px;
 }
+.footer a {
+  color: #595959;
+}
+.footer a:hover {
+  color: #595959;
+  text-decoration: underline;
+}
 
 .menu_footer {
   list-style: none;
@@ -295,15 +302,17 @@ a {
     line-height: 16px;
   }
 }
-.menu_footer li + li {
+.menu_footer li + li a {
   border-left: 1px solid #3E6183;
 }
 .menu_footer a {
   color: #3E6183;
-  padding: 0 8px 4px 8px;
+  padding: 0 8px;
   font-size: 12px;
   line-height: 12px;
   font-weight: 600;
+  margin: 6px 0;
+  display: inline-block;
 }
 @media (min-width: 992px) {
   .menu_footer a {
@@ -754,6 +763,7 @@ a {
 .arr_box .arrow-right i,
 .arr_box .arrow-left i {
   color: #bbb;
+  margin: 0 !important;
 }
 .arr_box .arrow-right:hover,
 .arr_box .arrow-left:hover {

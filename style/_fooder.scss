@@ -8,6 +8,13 @@
   .footer_logo {
     max-height: 52px;
   }
+  a{
+    color: $color_grey_1;
+    &:hover{
+      color: $color_grey_1;
+      text-decoration: underline;
+    }
+  }
 }
 .menu_footer {
   list-style: none;
@@ -22,15 +29,20 @@
       line-height: 16px;
     }
     + li {
+      a{
+        
       border-left: 1px solid $color_main;
+      }
     }
   }
   a {
     color: $color_main;
-    padding: 0 8px 4px 8px;
+    padding: 0 8px;
     font-size: 12px;
     line-height: 12px;
     font-weight: 600;
+    margin: 6px 0;
+    display: inline-block;
     @media (min-width: 992px) {
       line-height: 16px;
       font-size: 16px;
