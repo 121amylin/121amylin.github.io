@@ -150,6 +150,8 @@ a {
   position: absolute;
   right: 18px;
   top: 12px;
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
 }
 @media (min-width: 992px) {
   #navbarTogglerDemo01 .nav-item .gg-arrow-right {
@@ -158,6 +160,8 @@ a {
     width: 16px;
     right: 10px;
     top: 8px;
+    -webkit-transform: rotate(0deg);
+            transform: rotate(0deg);
   }
 }
 @media (max-width: 991px) {
@@ -802,16 +806,16 @@ a {
   margin: 20px 0;
 }
 .list_card .card:nth-child(1n) {
-  background-color: #edf1f0;
+  background-color: #dde6e4;
 }
 .list_card .card:nth-child(2n) {
-  background-color: #efece8;
+  background-color: #e5ded5;
 }
 .list_card .card:nth-child(3n) {
-  background-color: #ecf0f3;
+  background-color: #cbd5dd;
 }
 .list_card .card:nth-child(4n) {
-  background-color: #f3f0ef;
+  background-color: #d6cdcb;
 }
 .list_card .card .text {
   position: absolute;

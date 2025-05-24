@@ -121,16 +121,20 @@
       margin: 20px 0;
     }
     &:nth-child(1n) {
-      background-color: #edf1f0;
+      // background-color: #edf1f0;
+      background-color: #dde6e4;
     }
     &:nth-child(2n) {
-      background-color: #efece8;
+      // background-color: #efece8;
+      background-color: #e5ded5;
     }
     &:nth-child(3n) {
-      background-color: #ecf0f3;
+      // background-color: #ecf0f3;
+      background-color: #cbd5dd;
     }
     &:nth-child(4n) {
-      background-color: #f3f0ef;
+      // background-color: #f3f0ef;
+      background-color: #d6cdcb;
     }
     .text {
       position: absolute;
