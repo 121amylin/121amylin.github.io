@@ -191,6 +191,11 @@ a {
     background-color: transparent;
   }
 }
+@media (max-width: 991px) {
+  #navbarTogglerDemo01 .navbar-nav > .nav-item > .nav-link + .gg-arrow-right {
+    display: none;
+  }
+}
 #navbarTogglerDemo01 .navbar-nav > .nav-item > .dropdown-menu > .nav-item + .nav-item {
   border-top: #ecf0f3 1px solid;
 }
@@ -650,6 +655,9 @@ a {
 }
 .box_edit li b {
   color: #3E6183;
+}
+.box_edit img {
+  height: auto !important;
 }
 
 .bannerSwiper {

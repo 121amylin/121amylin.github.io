@@ -160,6 +160,11 @@
             background-color: transparent;
           }
         }
+        + .gg-arrow-right {
+          @media (max-width: 991px) {
+            display: none;
+          }
+        }
       }
       > .dropdown-menu {
         > .nav-item {
@@ -241,6 +246,6 @@
 
 #navbarTogglerDemo01 > .navbar-nav > .nav-item > .nested-dropdown-menu {
   @media (max-width: 991px) {
-    display: block !important; 
+    display: block !important;
   }
 }
