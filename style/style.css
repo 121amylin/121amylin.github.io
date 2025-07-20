@@ -907,6 +907,16 @@ a {
 .list_card.list_card_v2 .card:hover::after {
   opacity: 0;
 }
+.list_card.list_card_v3 .card:hover .text .btn_more {
+  background-color: #595959;
+  color: #fff;
+}
+.list_card.list_card_v3 .card:hover .text .btn_more .gg-arrow-right {
+  color: #fff;
+}
+.list_card.list_card_v3 .card .btn_more {
+  pointer-events: none;
+}
 
 .area_about {
   background-color: #F4F4F4;
