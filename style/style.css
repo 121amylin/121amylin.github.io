@@ -850,11 +850,14 @@ a {
 }
 .list_card .card .tw {
   margin-bottom: 4px;
-  font-size: 18px;
+  font-size: 20px;
 }
 .list_card .card .en {
-  font-size: 14px;
+  font-size: 16px;
   opacity: 0.9;
+}
+.list_card .card .btn_more {
+  font-size: 16px;
 }
 .list_card.list_card_v2 .card {
   position: relative;
