@@ -819,7 +819,7 @@ a {
   }
 }
 .list_card .card img {
-  margin: 20px 0;
+  margin: 0;
 }
 .list_card .card:nth-child(1n) {
   background-color: #dde6e4;
