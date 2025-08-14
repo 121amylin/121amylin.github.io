@@ -115,14 +115,22 @@ a {
   border: none;
   display: none;
 }
-#navbarTogglerDemo01 .dropdown-menu.show {
-  display: block;
-}
 @media (min-width: 992px) {
   #navbarTogglerDemo01 .dropdown-menu {
     background-color: #ecf0f3;
     margin-left: 4px;
   }
+}
+#navbarTogglerDemo01 .dropdown-menu::before {
+  content: "";
+  display: block;
+  position: absolute;
+  width: calc(100% + 4px);
+  height: 100px;
+  left: -4px;
+}
+#navbarTogglerDemo01 .dropdown-menu.show {
+  display: block;
 }
 #navbarTogglerDemo01 .dropdown-toggle {
   display: -webkit-box;

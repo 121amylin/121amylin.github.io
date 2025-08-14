@@ -98,16 +98,24 @@
   .dropdown-menu {
     border: none;
     display: none;
+    @media (min-width: 992px) {
+      background-color: #ecf0f3;
+      margin-left: 4px;
+    }
+    &::before{
+      content: '';
+      display: block;
+      position: absolute;
+      width: calc(100% + 4px);
+      height: 100px;
+      left: -4px;
+    }
     &.show {
       display: block;
     }
     // @media (max-width: 991px) {
     //   display: block;
     // }
-    @media (min-width: 992px) {
-      background-color: #ecf0f3;
-      margin-left: 4px;
-    }
   }
   .dropdown-toggle {
     display: flex;
